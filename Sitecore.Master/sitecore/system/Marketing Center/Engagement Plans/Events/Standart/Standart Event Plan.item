@@ -1,0 +1,70 @@
+----item----
+version: 1
+id: {6046539D-B688-4E42-825F-E7F553889DE5}
+database: master
+path: /sitecore/system/Marketing Center/Engagement Plans/Events/Standart/Standart Event Plan
+parent: {B64BC64A-BC68-4A38-80EF-1414C5AC53F6}
+name: Standart Event Plan
+master: {00000000-0000-0000-0000-000000000000}
+template: {6E5B63D6-2401-4A52-8B4D-CFEF5E4E9752}
+templatekey: Engagement Plan
+
+----field----
+field: {C36D22D2-94FC-46AC-91DB-2CF322C66895}
+name: Flow designer items
+key: flow designer items
+content-length: 353
+
+<flowDesignerItems>
+  <disconnectedItems />
+  <flowRenderedItemsValues>
+    <flowRenderedItemValues itemId="0f079bd0-210a-4575-a934-a7093ffeed68" x="2" y="3" width="12" height="6" zIndex="1" backgroundColor="#FF00344E" foregroundColor="#FFFFFFFF" iconUri="" showIcon="false" fieldEditorValues="" />
+  </flowRenderedItemsValues>
+</flowDesignerItems>
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{689E2994-4656-4C58-9112-7826CB46EE69}
+----version----
+language: en
+version: 1
+revision: c07a75d3-e95e-4dff-a75d-450051e89361
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130511T213905
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c07a75d3-e95e-4dff-a75d-450051e89361
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130511T213956:635039051968973828
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{39156DC0-21C6-4F64-B641-31E85C8F5DFE}

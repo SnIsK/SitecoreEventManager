@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Modules.EventManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Modules.EventManager", "Sitecore.EventManager\Sitecore.Modules.EventManager.csproj", "{E550BCF8-EFA9-4258-B8EB-83C9A164AF02}"
 EndProject
+Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.Master", "Sitecore.Master\Sitecore.Master.scproj", "{D0D21339-9F3C-463F-A64B-51BAD81F73E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,12 @@ Global
 		{E550BCF8-EFA9-4258-B8EB-83C9A164AF02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E550BCF8-EFA9-4258-B8EB-83C9A164AF02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E550BCF8-EFA9-4258-B8EB-83C9A164AF02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D21339-9F3C-463F-A64B-51BAD81F73E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D21339-9F3C-463F-A64B-51BAD81F73E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D21339-9F3C-463F-A64B-51BAD81F73E8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D0D21339-9F3C-463F-A64B-51BAD81F73E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D21339-9F3C-463F-A64B-51BAD81F73E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D21339-9F3C-463F-A64B-51BAD81F73E8}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
