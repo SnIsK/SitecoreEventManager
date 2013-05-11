@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {018E6B15-BB56-4C26-8070-F471363D8E4C}
+database: master
+path: /sitecore/templates/Event Manager/Event/Event Data
+parent: {2D4455E9-FDB6-4ED9-8298-49AA62A83AB3}
+name: Event Data
+master: {00000000-0000-0000-0000-000000000000}
+template: {E269FBB5-3750-427A-9149-7AA950B49301}
+templatekey: Template section
+
+----version----
+language: en
+version: 1
+revision: 0a9cd991-eb31-436a-b4c1-d9c86ad87071
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130507T232127
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0a9cd991-eb31-436a-b4c1-d9c86ad87071
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130507T232127:635035656877090105
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

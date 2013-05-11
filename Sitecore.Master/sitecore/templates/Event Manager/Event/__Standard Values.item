@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {12658C40-641F-439E-A542-1624A826CC5D}
+database: master
+path: /sitecore/templates/Event Manager/Event/__Standard Values
+parent: {2D4455E9-FDB6-4ED9-8298-49AA62A83AB3}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {2D4455E9-FDB6-4ED9-8298-49AA62A83AB3}
+templatekey: Event
+
+----version----
+language: en
+version: 1
+revision: b8aba3a3-d4c9-48e9-aad3-f6249631830c
+
+----field----
+field: {780F5A8E-EB94-425C-8113-9A157B4E0208}
+name: From
+key: from
+content-length: 11
+
+$dateT$time
+----field----
+field: {1FFB95DA-926E-4CF0-BB07-289B4649F502}
+name: To
+key: to
+content-length: 11
+
+$dateT$time
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130507T232201
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b8aba3a3-d4c9-48e9-aad3-f6249631830c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130507T232339:635035658191323033
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

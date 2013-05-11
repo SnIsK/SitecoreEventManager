@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {69E81531-08DD-495F-8DE9-2E3214BCB680}
+database: master
+path: /sitecore/layout/Renderings/Event Manger/Speak/Webcontrols
+parent: {1F219C40-E975-4876-AB34-2D5A74471B68}
+name: Webcontrols
+master: {00000000-0000-0000-0000-000000000000}
+template: {7EE0975B-0698-493E-B3A2-0B2EF33D0522}
+templatekey: Rendering Folder
+
+----version----
+language: en
+version: 1
+revision: 10f1d3ac-c26f-4d34-b12d-5d6d5b396d3b
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130507T203445
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+10f1d3ac-c26f-4d34-b12d-5d6d5b396d3b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130507T203445:635035556854294362
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
