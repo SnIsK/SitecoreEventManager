@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Massive</id>
+    <version>1.1</version>
+    <title>Massive</title>
+    <authors>Rob Conery</authors>
+    <owners>Rob Conery</owners>
+    <licenseUrl>https://github.com/robconery/massive/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/robconery/massive/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>A data access wrapper based on System.Dynamic. 400 lines of happiness</description>
+    <summary>A data access wrapper based on System.Dynamic. 400 lines of happiness</summary>
+    <tags>aspmvc, mvc3, asp.net, webmatrix</tags>
+  </metadata>
+</package>

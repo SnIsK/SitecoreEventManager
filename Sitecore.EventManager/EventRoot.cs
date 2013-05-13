@@ -48,7 +48,7 @@ namespace Sitecore.Modules.EventManager
         /// <param name="eventName">The name of the event</param>
         public Item CreateEvent(string eventName)
         {
-            string proposeValidItemName = ItemUtil.ProposeValidItemName(eventName);
+            string proposeValidItemName = Sitecore.Data.Items.ItemUtil.ProposeValidItemName(eventName);
             Item item = this._rootItem.Add(proposeValidItemName, Settings.EventTemplateId);
 
             if (item == null)
