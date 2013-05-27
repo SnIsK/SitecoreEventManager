@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using Sitecore.Analytics.Automation;
 using Sitecore.Data;
+using Sitecore.Diagnostics;
+using Sitecore.Exceptions;
 using Sitecore.Modules.EventManager.Entities;
 
 namespace Sitecore.Modules.EventManager
@@ -19,7 +21,7 @@ namespace Sitecore.Modules.EventManager
         {
             // this is the only thing there is needed right now, should be changed to a sql statement, if there are properties
             //See Sitecore.Modules.EmailCampaign.Core.Analytics.GetPlanData and Sitecore.Modules.EmailCampaign.Core.Analytics.GetPlanData
-            
+
             var properties = typeof(PlanData).GetProperties().Where(t => Attribute.IsDefined(t, typeof(StateNameAttribute)));
 
             var database = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
@@ -43,6 +45,20 @@ namespace Sitecore.Modules.EventManager
             }
 
             return planData;
+        }
+
+        public static ID GetState(string statename, ID engagementId)
+        {
+            var database = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
+
+            var engagementPlan = database.GetItem(engagementId);
+
+            Assert.IsNotNull(engagementPlan, string.Format("Could not find engangement plan with id {0}", engagementId.Guid.ToString("D")));
+
+            var stateItem = engagementPlan.Children.FirstOrDefault(t => t.Name == statename);
+            Assert.IsNotNull(stateItem, string.Format(string.Format("State {0} not found under {1}", statename, engagementId.Guid.ToString("D"))));
+
+            return stateItem.ID;
         }
     }
 }

@@ -24,10 +24,10 @@ namespace Sitecore.Modules.EventManager.Events
         {
             item.Editing.BeginEdit();
             var eventItem = new Entities.EventItem(item);
-            var PlanRoot = (Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database).GetItem("{963678A4-869C-48AB-915B-D18C6D2AF357}");
+            var planRoot = (Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database).GetItem("{963678A4-869C-48AB-915B-D18C6D2AF357}");
 
             //TODO: Create more unike path
-            var copiedPlanItem = eventItem.EventRoot.EngangementPlanItem.CopyTo(PlanRoot, item.Name);
+            var copiedPlanItem = eventItem.EventRoot.EngangementPlanItem.CopyTo(planRoot, item.Name);
 
             eventItem.PlanId = copiedPlanItem.ID.Guid;
             item.Editing.EndEdit();

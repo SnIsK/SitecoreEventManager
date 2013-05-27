@@ -1,0 +1,2 @@
+#Sending a email with ecm - Service emails
+new SendingManager(false, message).SendStandardMessage(receiver);
