@@ -8,6 +8,9 @@ namespace Sitecore.Modules.EventManager.Entities
 
         [StateName("Signed up")]
         public int NumberOfSignups { get; set; }
+
+        [StateName("Removed")]
+        public int NumberOfRemoved { get; set; }
     }
 
     public class StateNameAttribute : Attribute

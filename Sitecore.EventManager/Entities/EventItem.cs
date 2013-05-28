@@ -17,7 +17,8 @@ namespace Sitecore.Modules.EventManager.Entities
         /// <summary>
         /// Uses Sitecore.Context.Item to create the EventItem
         /// </summary>
-        public EventItem() : base(Sitecore.Context.Item)
+        public EventItem()
+            : base(Sitecore.Context.Item)
         {
 
         }
@@ -43,16 +44,36 @@ namespace Sitecore.Modules.EventManager.Entities
 
         /// <summary>
         /// Adds a user in the signup stage
+        /// If the user is in the removed state, move the user back to the signed up state
         /// </summary>
         /// <param name="user">The user to signup for the event</param>
         /// <returns></returns>
-        public bool SignupUser(User user)
+        public void SignupUser(User user)
         {
-            var stateId = AnalyticsHelper.GetState("Signed up", Sitecore.Data.ID.Parse(this.PlanId));
-            AutomationManager.Provider.CreateAutomationState(user.Profile.UserName, this.PlanId, stateId.ToGuid());
 
-            // add some validation that the user aint already in the plan
-            return true;
+            var removedState = AnalyticsHelper.GetState("Removed", Sitecore.Data.ID.Parse(this.PlanId));
+            var signupState = AnalyticsHelper.GetState("Signed up", Sitecore.Data.ID.Parse(this.PlanId));
+            var stateVisistors = AutomationManager.Provider.GetStateVisitors(removedState.Guid);
+
+            if (stateVisistors.Any(t => t == user.Profile.UserName))
+            {
+                AutomationManager.Provider.ChangeUserState(user.Profile.UserName, signupState.Guid, removedState.Guid);
+            }
+
+
+            AutomationManager.Provider.CreateAutomationState(user.Profile.UserName, this.PlanId, signupState.ToGuid());
+        }
+
+        /// <summary>
+        /// Changes the user to the removed state
+        /// </summary>
+        /// <param name="user">The user to remove</param>
+        /// <returns></returns>
+        public void RemoveUser(User user)
+        {
+            var signupStateId = AnalyticsHelper.GetState("Signed up", Sitecore.Data.ID.Parse(this.PlanId));
+            var removedStateId = AnalyticsHelper.GetState("Removed", Sitecore.Data.ID.Parse(this.PlanId));
+            AutomationManager.Provider.ChangeUserState(user.Profile.UserName, signupStateId.Guid, removedStateId.Guid);
         }
     }
 }
