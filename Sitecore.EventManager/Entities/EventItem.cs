@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Sitecore.Analytics.Automation.Data;
 using Sitecore.Data.Items;
@@ -74,6 +75,14 @@ namespace Sitecore.Modules.EventManager.Entities
             var signupStateId = AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId));
             var removedStateId = AnalyticsHelper.GetState("Deregistered", Sitecore.Data.ID.Parse(this.PlanId));
             AutomationManager.Provider.ChangeUserState(user.Profile.UserName, signupStateId.Guid, removedStateId.Guid);
+        }
+
+
+        public List<string> GetRegistered()
+        {
+            var stateVisitors = AutomationManager.Provider.GetStateVisitors(AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId)).Guid);
+
+            return stateVisitors;
         }
     }
 }

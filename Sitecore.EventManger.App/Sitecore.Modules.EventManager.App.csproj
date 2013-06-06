@@ -33,6 +33,9 @@
     <Reference Include="Sitecore.Analytics">
       <HintPath>..\Lib\Sitecore.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Client.Extensions">
+      <HintPath>..\Lib\Sitecore.Client.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\Lib\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -51,9 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\Massive.cs" />
+    <Compile Include="Commands\ExportSignupList.cs" />
     <Compile Include="Entities\EventListData.cs" />
+    <Compile Include="Entities\RegisteredUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EventRepository.cs" />
+    <Compile Include="Repositories\RegisteredRepository.cs" />
     <Compile Include="Ui\WebControls\AddEventDialogControl.cs" />
     <Compile Include="Ui\WebControls\EventListControl.cs" />
   </ItemGroup>
