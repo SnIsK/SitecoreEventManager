@@ -48,11 +48,11 @@ namespace Sitecore.Modules.EventManager.Entities
         /// </summary>
         /// <param name="user">The user to signup for the event</param>
         /// <returns></returns>
-        public void SignupUser(User user)
+        public void RegisterUser(User user)
         {
 
-            var removedState = AnalyticsHelper.GetState("Removed", Sitecore.Data.ID.Parse(this.PlanId));
-            var signupState = AnalyticsHelper.GetState("Signed up", Sitecore.Data.ID.Parse(this.PlanId));
+            var removedState = AnalyticsHelper.GetState("Deregistered", Sitecore.Data.ID.Parse(this.PlanId));
+            var signupState = AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId));
             var stateVisistors = AutomationManager.Provider.GetStateVisitors(removedState.Guid);
 
             if (stateVisistors.Any(t => t == user.Profile.UserName))
@@ -69,10 +69,10 @@ namespace Sitecore.Modules.EventManager.Entities
         /// </summary>
         /// <param name="user">The user to remove</param>
         /// <returns></returns>
-        public void RemoveUser(User user)
+        public void DeregistrationUser(User user)
         {
-            var signupStateId = AnalyticsHelper.GetState("Signed up", Sitecore.Data.ID.Parse(this.PlanId));
-            var removedStateId = AnalyticsHelper.GetState("Removed", Sitecore.Data.ID.Parse(this.PlanId));
+            var signupStateId = AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId));
+            var removedStateId = AnalyticsHelper.GetState("Deregistered", Sitecore.Data.ID.Parse(this.PlanId));
             AutomationManager.Provider.ChangeUserState(user.Profile.UserName, signupStateId.Guid, removedStateId.Guid);
         }
     }

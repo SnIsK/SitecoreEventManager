@@ -16,9 +16,14 @@ namespace Sitecore.Modules.EventManager.App.Entities
         public DateTime To { get; set; }
         public DateTime From { get; set; }
 
-        public int Signups
+        public int Registered
         {
-            get { return this.Plan.NumberOfSignups; }
+            get { return this.Plan.NumberOfRegistred; }
+        }
+
+        public int Deregistered
+        {
+            get { return this.Plan.NumberOfDeregistered; }
         }
 
         public int PageViews
@@ -46,7 +51,14 @@ namespace Sitecore.Modules.EventManager.App.Entities
 
             var eventItem = new Sitecore.Modules.EventManager.Entities.EventRootItem(ItemUtil.GetContentItem(ID.Parse(data.Id)));
 
-            data.Plan =  AnalyticsHelper.GetPlanData(eventItem.EngangementPlanItem.ID.Guid);
+            try
+            {
+                data.Plan = AnalyticsHelper.GetPlanData(eventItem.EngangementPlanItem.ID.Guid);
+            }
+            catch (Exception exception)
+            {
+                Sitecore.Diagnostics.Log.Error("EventManager: Converter failed to convert engangement plan", exception, typeof(EventListData));
+            }
 
             return data;
         }

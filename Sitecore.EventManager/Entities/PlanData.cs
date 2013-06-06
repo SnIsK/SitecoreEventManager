@@ -6,11 +6,11 @@ namespace Sitecore.Modules.EventManager.Entities
     {
         public Guid Id { get; set; }
 
-        [StateName("Signed up")]
-        public int NumberOfSignups { get; set; }
+        [StateName("Registered")]
+        public int NumberOfRegistred { get; set; }
 
-        [StateName("Removed")]
-        public int NumberOfRemoved { get; set; }
+        [StateName("Deregistered")]
+        public int NumberOfDeregistered { get; set; }
     }
 
     public class StateNameAttribute : Attribute

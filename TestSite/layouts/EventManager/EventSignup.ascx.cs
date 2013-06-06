@@ -32,7 +32,7 @@ namespace TestSite.layouts.EventManager
             user.Profile.FullName = this.Name.Text;
             user.Profile.Save();
 
-            eventItem.SignupUser(user);
+            eventItem.RegisterUser(user);
         }
     }
 }

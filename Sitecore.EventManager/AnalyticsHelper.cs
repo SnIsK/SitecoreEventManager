@@ -38,7 +38,7 @@ namespace Sitecore.Modules.EventManager
                     propertyInfo.GetCustomAttributes(typeof(StateNameAttribute), true).First() as StateNameAttribute;
 
                 var stateItem = childList.FirstOrDefault(t => t.Name == attribute.StateName);
-
+                Assert.IsNotNull(stateItem, "StateItem could not be found on {0} engangement plan", engagementId);
                 var numberStateVisitors = VisitorManager.GetNumberStateVisitors(stateItem.ID);
 
                 propertyInfo.SetValue(planData, numberStateVisitors);
