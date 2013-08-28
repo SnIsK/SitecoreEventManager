@@ -51,7 +51,7 @@ namespace Sitecore.Modules.EventManager.Entities
         /// <returns></returns>
         public void RegisterUser(User user)
         {
-
+            // TODO: Create event:registerStart event
             var removedState = AnalyticsHelper.GetState("Deregistered", Sitecore.Data.ID.Parse(this.PlanId));
             var signupState = AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId));
             var stateVisistors = AutomationManager.Provider.GetStateVisitors(removedState.Guid);
@@ -61,8 +61,9 @@ namespace Sitecore.Modules.EventManager.Entities
                 AutomationManager.Provider.ChangeUserState(user.Profile.UserName, signupState.Guid, removedState.Guid);
             }
 
-
             AutomationManager.Provider.CreateAutomationState(user.Profile.UserName, this.PlanId, signupState.ToGuid());
+
+            // TODO: Create event:registerEnd event
         }
 
         /// <summary>

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using Sitecore.Modules.EventManager.App.Entities;
 using Sitecore.Modules.EventManager.Entities;
+using Sitecore.Security.Accounts;
 using Sitecore.Web;
 
 namespace Sitecore.Modules.EventManager.App.Repositories
@@ -18,12 +20,23 @@ namespace Sitecore.Modules.EventManager.App.Repositories
 
             var eventItem = new EventItem(item);
 
-            var subsribers = eventItem.GetRegistered().Select(t => new RegisteredUser()
+
+            List<RegisteredUser> subsribers = new List<RegisteredUser>();
+
+            foreach (var registered in eventItem.GetRegistered())
+            {
+                User fromName = User.FromName(registered, false);
+
+                subsribers.Add(new RegisteredUser()
                 {
-                    Name = "TODO", Email = t
+                    Email =  fromName.Profile.Email,
+                    Name = fromName.Profile.FullName
                 });
 
-            return subsribers.ToList();
+            }
+
+
+            return subsribers;
         }
     }
 }

@@ -13,12 +13,13 @@ templatekey: Engagement Plan
 field: {C36D22D2-94FC-46AC-91DB-2CF322C66895}
 name: Flow designer items
 key: flow designer items
-content-length: 353
+content-length: 1031
 
 <flowDesignerItems>
   <disconnectedItems />
   <flowRenderedItemsValues>
-    <flowRenderedItemValues itemId="0f079bd0-210a-4575-a934-a7093ffeed68" x="2" y="3" width="12" height="6" zIndex="1" backgroundColor="#FF00344E" foregroundColor="#FFFFFFFF" iconUri="" showIcon="false" fieldEditorValues="" />
+    <flowRenderedItemValues itemId="0f079bd0-210a-4575-a934-a7093ffeed68" x="2" y="3" width="12" height="6" zIndex="1" backgroundColor="#FF00344E" foregroundColor="#FFFFFFFF" iconUri="/temp/IconCache/Software/32x32/shape_square.png" showIcon="false" fieldEditorValues="&lt;fields itemId=&quot;{04AF049D-978A-43C1-AE62-7698A8A192C5}&quot;&gt;&#xD;&#xA;  &lt;field id=&quot;{B5E02AD9-D56F-4C41-A065-A133DB87BDEB}&quot; value=&quot;Signed up&quot; name=&quot;__Display name&quot; /&gt;&#xD;&#xA;  &lt;field id=&quot;{06F2D72A-1924-4B9A-BA1E-186CE4E57EFD}&quot; value=&quot;Visitor has signed op for the event&quot; name=&quot;Description&quot; /&gt;&#xD;&#xA;&lt;/fields&gt;" />
+    <flowRenderedItemValues itemId="1b778c84-6cea-44fd-b72f-c1a045c67588" x="18" y="3" width="12" height="6" zIndex="2" backgroundColor="#FF00344E" foregroundColor="#FFFFFFFF" iconUri="" showIcon="false" fieldEditorValues="" />
   </flowRenderedItemsValues>
 </flowDesignerItems>
 ----field----
@@ -31,7 +32,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: c07a75d3-e95e-4dff-a75d-450051e89361
+revision: 8c074fae-3fff-4840-b5a9-955399a0f97a
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -46,14 +47,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c07a75d3-e95e-4dff-a75d-450051e89361
+8c074fae-3fff-4840-b5a9-955399a0f97a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20130511T213956:635039051968973828
+20130528T212930:635053733709635024
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

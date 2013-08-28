@@ -1,40 +1,47 @@
 ----item----
 version: 1
-id: {2D4455E9-FDB6-4ED9-8298-49AA62A83AB3}
+id: {D5DFF9B2-A39F-421D-B70D-8D57E4E382B7}
 database: master
-path: /sitecore/templates/Event Manager/Event
-parent: {E255D35A-F511-42FE-B156-92EDB0FB9C4A}
-name: Event
+path: /sitecore/templates/Event Manager/Event/Event Data/Description
+parent: {018E6B15-BB56-4C26-8070-F471363D8E4C}
+name: Description
 master: {00000000-0000-0000-0000-000000000000}
-template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
-templatekey: Template
+template: {455A3E98-A627-4B40-8035-E683A0331AC7}
+templatekey: Template field
 
 ----field----
-field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
-name: __Base template
-key: __base template
-content-length: 38
+field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
+name: Type
+key: type
+content-length: 16
 
-{1930BBEB-7805-471A-A3BE-4858AC7CF696}
+Single-Line Text
 ----field----
-field: {F7D48A55-2158-4F02-9356-756654404F73}
-name: __Standard values
-key: __standard values
-content-length: 38
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 2
 
-{12658C40-641F-439E-A542-1624A826CC5D}
+75
 ----version----
 language: en
 version: 1
-revision: cddf50cd-cb79-4de8-8963-f4cd74dd4412
+revision: 0cb64f47-9e79-4b17-84d0-8ebfcd86a722
 
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 15
 
-20130507T212200
+20130528T214912
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-cddf50cd-cb79-4de8-8963-f4cd74dd4412
+0cb64f47-9e79-4b17-84d0-8ebfcd86a722
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20130528T215136:635053746964805107
+20130528T215136:635053746963704362
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

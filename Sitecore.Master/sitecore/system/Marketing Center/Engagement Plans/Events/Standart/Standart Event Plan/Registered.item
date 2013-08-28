@@ -2,9 +2,9 @@
 version: 1
 id: {04AF049D-978A-43C1-AE62-7698A8A192C5}
 database: master
-path: /sitecore/system/Marketing Center/Engagement Plans/Events/Standart/Standart Event Plan/Signed up
+path: /sitecore/system/Marketing Center/Engagement Plans/Events/Standart/Standart Event Plan/Registered
 parent: {6046539D-B688-4E42-825F-E7F553889DE5}
-name: Signed up
+name: Registered
 master: {00000000-0000-0000-0000-000000000000}
 template: {8CE2707A-3742-4A89-933B-065E5BE02BC9}
 templatekey: Engagement Plan State
@@ -33,22 +33,22 @@ content-length: 36
 ----version----
 language: en
 version: 1
-revision: 15538cc2-ff3e-4b03-8d82-14d0eaadd730
+revision: c9dac676-ad34-4ddf-b464-9fdc1be88b05
 
 ----field----
 field: {06F2D72A-1924-4B9A-BA1E-186CE4E57EFD}
 name: Description
 key: description
-content-length: 35
+content-length: 42
 
-Visitor has signed op for the event
+Visitors that has registered for the event
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
-content-length: 9
+content-length: 10
 
-Signed up
+Registered
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-15538cc2-ff3e-4b03-8d82-14d0eaadd730
+c9dac676-ad34-4ddf-b464-9fdc1be88b05
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20130511T213956:635039051968853748
+20130528T212930:635053733704977482
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

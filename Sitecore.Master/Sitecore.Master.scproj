@@ -29,8 +29,8 @@
     <OutputPath>.\Debug\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
     <SitecoreDeployFolder>D:\Solutions\InstallerProjects\eventmanager\Website</SitecoreDeployFolder>
-    <SitecoreWebUrl>http://eventmanager.dev/</SitecoreWebUrl>
-    <SitecoreAccessGuid>6e6bd1e8-a5ef-40f3-aad0-9d40a8c4c300</SitecoreAccessGuid>
+    <SitecoreWebUrl>http://horten.dk.dev</SitecoreWebUrl>
+    <SitecoreAccessGuid>79634c9d-525a-42ce-9aa2-0cab243e84e0</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -120,7 +120,12 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Center\Engagement Plans\Events\Standart\Standart Event Plan\Signed up.item">
+    <SitecoreItem Include="sitecore\system\Marketing Center\Engagement Plans\Events\Standart\Standart Event Plan\Deregistered.item">
+      <Icon>/temp/IconCache/Software/32x32/shape_square.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Marketing Center\Engagement Plans\Events\Standart\Standart Event Plan\Registered.item">
       <Icon>/temp/IconCache/Software/32x32/shape_square.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -180,7 +185,17 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Event Manager\Event\Event Data\Description.item">
+      <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Event Data\From.item">
+      <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Event Manager\Event\Event Data\Title.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
