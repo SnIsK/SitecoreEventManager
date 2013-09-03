@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {A469A386-3AD1-4319-90E8-209B3BE37B54}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Task pages/EventOverviewTaskPage/Signedup
+parent: {08041506-D739-4E92-8340-C0B8679EFB26}
+name: Signedup
+master: {00000000-0000-0000-0000-000000000000}
+template: {5B1F7DB3-486E-4C18-B048-3985F1ED619F}
+templatekey: Tab page
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 415
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{2D30DB8A-5F53-42D6-B593-90C10CD90ED2}"><p:d /></r><r uid="{3217F607-E8AB-49F0-8EAC-941545003873}" s:ds="/sitecore/system/Modules/SPEAK/Event Manager/Controls/List Views/RegisteredList" s:id="{3BC58682-4FE1-4B7F-BCDC-9A1D94B94B6B}" s:par="" s:ph="content" /><r uid="{41C1E975-E7D9-4D5D-A2FA-83FF81C22D82}"><p:d /></r></d></r>
+----version----
+language: en
+version: 1
+revision: cb2f8921-8719-4570-871e-bf803d1a2628
+
+----field----
+field: {657BCD86-D24F-49BF-9F1A-528EB6D96381}
+name: Title
+key: title
+content-length: 8
+
+SignedUp
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130606T213700
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cb2f8921-8719-4570-871e-bf803d1a2628
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130606T214003:635061516039081704
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

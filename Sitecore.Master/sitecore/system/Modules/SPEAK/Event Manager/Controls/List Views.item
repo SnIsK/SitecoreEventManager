@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {93080FBF-FBAC-413E-8C55-7C3DB8737512}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Controls/List Views
+parent: {A87C3E68-5FBD-4663-9A8B-50D3AAE7CAC0}
+name: List Views
+master: {00000000-0000-0000-0000-000000000000}
+template: {77A4EF98-C14F-4A3F-ADA7-706AF0DEFC1D}
+templatekey: List Views
+
+----version----
+language: en
+version: 1
+revision: 91a08aa3-cfa6-4b7f-b71d-9ffd117d62ce
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130507T214755
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+91a08aa3-cfa6-4b7f-b71d-9ffd117d62ce
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130507T214755:635035600757146808
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {8A14BF23-38BF-4D55-BD09-58ED4D68FC86}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Create/Create Event
+parent: {E3BBC0D2-3FB1-4970-9CEC-1DC803A3DFED}
+name: Create Event
+master: {00000000-0000-0000-0000-000000000000}
+template: {0C3C3B32-1076-43D6-B9BB-53D910856C31}
+templatekey: Rich dialog page
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 198
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{9F4EE977-CE7D-4051-AA61-3BF9D2CA431C}" s:id="{5BFEB384-EED2-4772-99DD-620B66F5FD60}" s:ph="main" /></d></r>
+----version----
+language: en
+version: 1
+revision: 314404ce-ea62-4eda-86b6-5eb66458c06c
+
+----field----
+field: {0641E4CB-21C0-4AF6-993B-6E5131575F45}
+name: Title
+key: title
+content-length: 12
+
+Create Event
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130507T194032
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+314404ce-ea62-4eda-86b6-5eb66458c06c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130507T203652:635035558122818919
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {2CEB4328-879A-4DC2-A02C-216071456804}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Task pages/EventOverviewTaskPage/General/General Event Info
+parent: {579A96C3-D154-4C56-B2F3-FD5FD0DE1780}
+name: General Event Info
+master: {00000000-0000-0000-0000-000000000000}
+template: {7D264C66-75EE-4B7D-AC09-A87B47EA122E}
+templatekey: FastQueryFieldEditor
+
+----version----
+language: en
+version: 1
+revision: 9b7c870e-d98e-4ced-9d22-a4971111a9bd
+
+----field----
+field: {EAF3CEFB-63C4-42D0-89A4-2783CCD91E0A}
+name: Title
+key: title
+content-length: 17
+
+GENERAL Info INFO
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130528T214300
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9b7c870e-d98e-4ced-9d22-a4971111a9bd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130528T214733:635053744536092630
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

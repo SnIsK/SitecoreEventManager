@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {62F5DA6C-C068-4088-8390-9BAFF9289B7C}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Controls/Action Panels/Recent Created Events/General/ExportList
+parent: {34B8F5E2-AB22-45B0-A769-7BC21876B0F2}
+name: ExportList
+master: {00000000-0000-0000-0000-000000000000}
+template: {AAF96A7E-164D-401C-BC35-DA15F41AA9EE}
+templatekey: Action
+
+----version----
+language: en
+version: 1
+revision: 306e0e8e-afb4-449e-b7e9-e6d4000615df
+
+----field----
+field: {E52066BC-420A-4570-88FB-07815A9AECC4}
+name: Title
+key: title
+content-length: 11
+
+Export List
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130606T214200
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+306e0e8e-afb4-449e-b7e9-e6d4000615df
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130606T214304:635061517849571337
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

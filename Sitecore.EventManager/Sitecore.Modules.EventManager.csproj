@@ -33,6 +33,9 @@
     <Reference Include="Sitecore.Automation.MarketingAutomation">
       <HintPath>..\Lib\Sitecore.Automation.MarketingAutomation.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Client.Extensions">
+      <HintPath>..\Lib\Sitecore.Client.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\Lib\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -40,6 +43,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,7 +57,10 @@
     <Compile Include="Entities\EventRootItem.cs" />
     <Compile Include="Entities\PlanData.cs" />
     <Compile Include="EventRoot.cs" />
+    <Compile Include="Events\Args\RegisterUserEventArgs.cs" />
+    <Compile Include="Events\DeRegisterUser.cs" />
     <Compile Include="Events\ItemEventHandler.cs" />
+    <Compile Include="Events\RegisterUser.cs" />
     <Compile Include="ItemGuids.cs" />
     <Compile Include="ItemUtil.cs" />
     <Compile Include="Pipelines\FindEventRoots.cs" />

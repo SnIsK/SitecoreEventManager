@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {5C8C9731-B9F7-452E-9AF2-168DCEDC666D}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Controls/List Views/Most Recent Created Events
+parent: {93080FBF-FBAC-413E-8C55-7C3DB8737512}
+name: Most Recent Created Events
+master: {00000000-0000-0000-0000-000000000000}
+template: {270D573C-55B3-421D-BEAF-139B4C2C4174}
+templatekey: ObjectDetailListWithSort
+
+----field----
+field: {329D43DB-3E7B-473F-BF5B-BCA60B102D7D}
+name: Show actions menu
+key: show actions menu
+content-length: 1
+
+1
+----field----
+field: {85BBF111-D92E-4E5A-B8FC-2C3C58B7C596}
+name: Actions
+key: actions
+content-length: 38
+
+{C3F223E8-D528-4A28-9015-15BA4AF4D458}
+----field----
+field: {2F9271AF-A2EE-473E-A5CF-9EAC98C18B8B}
+name: LoadDataWith
+key: loaddatawith
+content-length: 10
+
+LoadButton
+----field----
+field: {5C8F8D95-0E43-4A45-89B0-24845B27A9B4}
+name: EnableSearching
+key: enablesearching
+content-length: 0
+
+
+----field----
+field: {ABBF5F71-6491-4709-B2DC-EC74445B3835}
+name: DefaultSortColumn
+key: defaultsortcolumn
+content-length: 38
+
+{C0AAFBBA-A860-45DE-98F9-EFFB4A492CC0}
+----field----
+field: {5041FF2E-BDAA-43DA-8376-2C1470FAAAA9}
+name: DefaultSortDirection
+key: defaultsortdirection
+content-length: 10
+
+Descending
+----field----
+field: {30F4D911-A6FC-49F2-BD76-F11FF0B5590E}
+name: TypeName
+key: typename
+content-length: 97
+
+Sitecore.Modules.EventManager.App.Repositories.EventRepository, Sitecore.Modules.EventManager.App
+----field----
+field: {29A7D3C4-8FBE-464D-ACF0-80818D7624A8}
+name: DataObjectTypeName
+key: dataobjecttypename
+content-length: 77
+
+Sitecore.Modules.EventManager.App.Entities, Sitecore.Modules.EventManager.App
+----field----
+field: {64B076F6-2C5A-49FD-97C6-9C91C98B7C33}
+name: SelectMethod
+key: selectmethod
+content-length: 11
+
+GetListData
+----field----
+field: {37E8B360-36B0-49DC-8798-EE0A8D81FE9B}
+name: EnablePaging
+key: enablepaging
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: 7636247b-635c-496d-9945-0daf1a044470
+
+----field----
+field: {EAF3CEFB-63C4-42D0-89A4-2783CCD91E0A}
+name: Title
+key: title
+content-length: 26
+
+Most recent created events
+----field----
+field: {74CBFF85-F7E5-4FB8-9464-5D458B7D802B}
+name: SortParameterName
+key: sortparametername
+content-length: 10
+
+sortColumn
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130507T215000
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7636247b-635c-496d-9945-0daf1a044470
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130606T211835:635061503150246403
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

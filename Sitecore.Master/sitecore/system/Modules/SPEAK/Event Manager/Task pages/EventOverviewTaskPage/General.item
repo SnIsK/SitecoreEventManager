@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {579A96C3-D154-4C56-B2F3-FD5FD0DE1780}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Task pages/EventOverviewTaskPage/General
+parent: {08041506-D739-4E92-8340-C0B8679EFB26}
+name: General
+master: {00000000-0000-0000-0000-000000000000}
+template: {5B1F7DB3-486E-4C18-B048-3985F1ED619F}
+templatekey: Tab page
+
+----version----
+language: en
+version: 1
+revision: fdb0d7d2-616e-4b04-b28d-47f0d6578681
+
+----field----
+field: {657BCD86-D24F-49BF-9F1A-528EB6D96381}
+name: Title
+key: title
+content-length: 7
+
+General
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130528T214300
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fdb0d7d2-616e-4b04-b28d-47f0d6578681
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130528T214657:635053744171481553
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

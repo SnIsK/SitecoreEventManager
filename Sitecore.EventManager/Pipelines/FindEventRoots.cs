@@ -9,7 +9,7 @@ namespace Sitecore.Modules.EventManager.Pipelines
         {
             //TODO: Make this work!
             Database database = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
-            Item item = database.GetItem("{C76BEF46-B5C8-4C9C-9647-2788CC631EF1}");
+            Item item = database.GetItem(Sitecore.Configuration.Settings.GetSetting("EventManager.EventRootId"));
 
             args.EventRootItems.Add(item);
         }

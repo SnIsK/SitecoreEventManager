@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Sitecore.Analytics.Automation.Data;
 using Sitecore.Data.Items;
+using Sitecore.Events;
+using Sitecore.Modules.EventManager.Events.Args;
 using Sitecore.Security.Accounts;
 
 namespace Sitecore.Modules.EventManager.Entities
@@ -51,19 +53,15 @@ namespace Sitecore.Modules.EventManager.Entities
         /// <returns></returns>
         public void RegisterUser(User user)
         {
-            // TODO: Create event:registerStart event
-            var removedState = AnalyticsHelper.GetState("Deregistered", Sitecore.Data.ID.Parse(this.PlanId));
-            var signupState = AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId));
-            var stateVisistors = AutomationManager.Provider.GetStateVisitors(removedState.Guid);
-
-            if (stateVisistors.Any(t => t == user.Profile.UserName))
+            if (user == null)
             {
-                AutomationManager.Provider.ChangeUserState(user.Profile.UserName, signupState.Guid, removedState.Guid);
+                throw new ArgumentNullException("user", "user cant be null");
             }
-
-            AutomationManager.Provider.CreateAutomationState(user.Profile.UserName, this.PlanId, signupState.ToGuid());
-
-            // TODO: Create event:registerEnd event
+            Event.RaiseEvent("eventmanager:registeruser", this, new RegisterUserEventArgs()
+            {
+                EventItem = this,
+                User = user
+            });
         }
 
         /// <summary>
@@ -73,9 +71,7 @@ namespace Sitecore.Modules.EventManager.Entities
         /// <returns></returns>
         public void DeregistrationUser(User user)
         {
-            var signupStateId = AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId));
-            var removedStateId = AnalyticsHelper.GetState("Deregistered", Sitecore.Data.ID.Parse(this.PlanId));
-            AutomationManager.Provider.ChangeUserState(user.Profile.UserName, signupStateId.Guid, removedStateId.Guid);
+            Event.RaiseEvent("eventmanager:registeruser", user, this);
         }
 
 

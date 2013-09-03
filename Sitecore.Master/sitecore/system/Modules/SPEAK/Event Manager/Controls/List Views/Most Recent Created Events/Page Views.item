@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {4D231045-B366-40EF-B9C0-93CDBE6D6187}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Controls/List Views/Most Recent Created Events/Page Views
+parent: {5C8C9731-B9F7-452E-9AF2-168DCEDC666D}
+name: Page Views
+master: {00000000-0000-0000-0000-000000000000}
+template: {6A296415-6F3E-448A-B818-D6FFC596A43E}
+templatekey: Column Field
+
+----field----
+field: {5F160DE8-B540-494C-9029-2BFBD0610A56}
+name: DataField
+key: datafield
+content-length: 9
+
+PageViews
+----field----
+field: {7F8A4E6F-C55C-4168-831B-18084B98DF9D}
+name: Sortable
+key: sortable
+content-length: 1
+
+1
+----field----
+field: {4DFF681A-CD1F-41CC-86E4-C745D2337434}
+name: Alignment
+key: alignment
+content-length: 38
+
+{6B4032D5-026A-455E-BDD0-29EE03EBCB8C}
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+400
+----version----
+language: en
+version: 1
+revision: 597270d7-d76d-4a77-bce8-7fc7e29576f7
+
+----field----
+field: {46D020FF-CA0B-40F9-8B6D-5FCCE3370376}
+name: HeaderText
+key: headertext
+content-length: 10
+
+Page Views
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130511T231017
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+597270d7-d76d-4a77-bce8-7fc7e29576f7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130528T213217:635053735379464870
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

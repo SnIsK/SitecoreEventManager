@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {2A5D4A41-7648-4022-AA53-023219A6B8B9}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Controls/Action Panels/EventActionPanel
+parent: {B1AAA37F-E510-4A5A-8448-E113C06F6A58}
+name: EventActionPanel
+master: {00000000-0000-0000-0000-000000000000}
+template: {4479AE07-9438-437B-8BA5-31A2DE3E397C}
+templatekey: Action panel
+
+----version----
+language: en
+version: 1
+revision: 1ad952cf-b438-4d68-be35-121f5ab08fb5
+
+----field----
+field: {D882DB2F-9F5E-42B9-A273-7D0B5BE8D6CA}
+name: Title
+key: title
+content-length: 7
+
+Actions
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130903T153309
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1ad952cf-b438-4d68-be35-121f5ab08fb5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130903T164312:635138233929456275
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

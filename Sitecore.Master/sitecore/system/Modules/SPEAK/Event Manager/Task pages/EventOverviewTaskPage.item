@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {08041506-D739-4E92-8340-C0B8679EFB26}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Task pages/EventOverviewTaskPage
+parent: {5B0FF4FB-5B36-44F6-B49A-28698B8E48A7}
+name: EventOverviewTaskPage
+master: {00000000-0000-0000-0000-000000000000}
+template: {CE32B2ED-1090-4D49-94AB-9F4EA725EEF5}
+templatekey: Task page
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 576
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{4512535F-D34C-46B6-9A25-E0119FC0FE9F}"><p:d /></r><r uid="{5098F038-7DEA-4787-BD0B-F6086275FAF6}" p:before="r[@uid='{8AA38874-FFC6-4269-AEC3-6EAE5402B9A1}']" s:ds="/sitecore/system/Modules/SPEAK/Event Manager/Task pages/EventOverviewTaskPage" s:id="{D559F785-7277-40A4-8856-6DD53F20FDB2}" s:par="" s:ph="content" /><r uid="{8AA38874-FFC6-4269-AEC3-6EAE5402B9A1}" s:ds="{2A5D4A41-7648-4022-AA53-023219A6B8B9}" s:id="{C37A66C0-62BF-4056-9E09-C5931192F790}" s:par="" s:ph="top" /></d></r>
+----version----
+language: en
+version: 1
+revision: 73ca2ac0-309a-478a-b83e-cbbf6b4fcd42
+
+----field----
+field: {0641E4CB-21C0-4AF6-993B-6E5131575F45}
+name: Title
+key: title
+content-length: 21
+
+EventOverviewTaskPage
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130507T213000
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+73ca2ac0-309a-478a-b83e-cbbf6b4fcd42
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130903T162230:635138221509481428
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

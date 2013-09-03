@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {88B0D43C-43D6-45E8-8F14-F67C29EA3906}
+database: master
+path: /sitecore/system/Modules/SPEAK/Event Manager/Controls/Dialogs/Edit Event Page
+parent: {326F848B-277E-4F3E-B2B2-39CB39D76787}
+name: Edit Event Page
+master: {00000000-0000-0000-0000-000000000000}
+template: {0C3C3B32-1076-43D6-B9BB-53D910856C31}
+templatekey: Rich dialog page
+
+----field----
+field: {4B6C66CA-21A6-4BD7-BCD6-3D590EFED1BC}
+name: Show in menu
+key: show in menu
+content-length: 0
+
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 215
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{54BDE72C-964C-4DA5-A0C1-820D0D1D933F}" s:ds="" s:id="{0578C031-3053-452A-A435-0538FB6C6F92}" s:par="" s:ph="main" /></d></r>
+----version----
+language: en
+version: 1
+revision: de2f7cbf-0fe1-4874-9d33-46f1cee10772
+
+----field----
+field: {0641E4CB-21C0-4AF6-993B-6E5131575F45}
+name: Title
+key: title
+content-length: 11
+
+Page Editor
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20130903T145132
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+de2f7cbf-0fe1-4874-9d33-46f1cee10772
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20130903T164422:635138234625001525
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
