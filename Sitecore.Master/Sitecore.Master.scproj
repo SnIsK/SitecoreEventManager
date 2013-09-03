@@ -85,6 +85,11 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Renderings\Event Manger\Speak\Webcontrols\Iframe.item">
+      <Icon>/temp/IconCache/Control/32x32/multi_controls_h.png </Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\system.item">
       <Icon>/temp/IconCache/People/16x16/workstation1.png</Icon>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
