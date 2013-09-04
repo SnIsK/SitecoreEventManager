@@ -20,13 +20,12 @@ namespace Sitecore.Modules.EventManager.App.Ui.WebControls
 
         protected override void OnInit(EventArgs e)
         {
-            this._textBox.Text = "wohoo";
+            this._textBox.Text = string.Empty;
 
             this._createButton.CssClass = "sc-ecm-dialog-button";
             this._createButton.ID = "SaveButton";
             this._createButton.Text = "Create";
             this._createButton.Click += new EventHandler(this.OnAcceptClick);
-
         }
 
         private void OnAcceptClick(object sender, EventArgs e)
