@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sitecore.Analytics.Automation.Data;
+using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Events;
 using Sitecore.Modules.EventManager.Events.Args;
@@ -25,6 +26,50 @@ namespace Sitecore.Modules.EventManager.Entities
         {
 
         }
+
+        public DateField To
+        {
+            get
+            {
+                return this.InnerItem.Fields["To"];
+            }
+        }
+
+        public DateField From
+        {
+            get
+            {
+                return this.InnerItem.Fields["From"];
+            }
+        }
+
+        public TextField Title
+        {
+            get
+            {
+
+                return this.InnerItem.Fields["Title"];
+            }
+        }
+
+        public TextField Description
+        {
+            get
+            {
+
+                return this.InnerItem.Fields["Description"];
+            }
+        }
+
+        public TextField Location
+        {
+            get
+            {
+
+                return this.InnerItem.Fields["Location"];
+            }
+        }
+
 
         public EventRootItem EventRoot
         {

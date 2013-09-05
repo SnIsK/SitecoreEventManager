@@ -43,7 +43,7 @@ namespace Sitecore.Modules.EventManager.App.Entities
         {
             var data = new EventListData();
             data.Id = input.ID.Guid.ToString("D");
-            data.Name = input.DisplayName;
+            data.Name = input.Fields["Title"].Value;
             var toField = (Sitecore.Data.Fields.DateField)input.Fields["To"];
             data.To = toField.DateTime;
             var fromField = (Sitecore.Data.Fields.DateField)input.Fields["From"];
