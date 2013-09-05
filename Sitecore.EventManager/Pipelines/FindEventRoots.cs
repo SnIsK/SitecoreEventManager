@@ -1,5 +1,6 @@
 ﻿using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Modules.EventManager.Pipelines.Args;
 
 namespace Sitecore.Modules.EventManager.Pipelines
 {

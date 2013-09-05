@@ -4,7 +4,7 @@ using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Exceptions;
 using Sitecore.Modules.EventManager.Configuration;
-using Sitecore.Pipelines;
+using Sitecore.Modules.EventManager.Pipelines.Args;
 using System.Linq;
 
 namespace Sitecore.Modules.EventManager.Entities
@@ -67,18 +67,5 @@ namespace Sitecore.Modules.EventManager.Entities
         {
             return new EventItem(this.InnerItem.Axes.GetChild(ID.Parse(id)));
         }
-    }
-}
-
-namespace Sitecore.Modules.EventManager
-{
-    public class FindEventRootsArgs : PipelineArgs
-    {
-        public FindEventRootsArgs()
-        {
-            this.EventRootItems = new List<Item>();
-        }
-
-        public List<Item> EventRootItems { get; private set; }
     }
 }

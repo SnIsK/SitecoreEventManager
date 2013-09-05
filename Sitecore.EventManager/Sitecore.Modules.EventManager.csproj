@@ -55,13 +55,14 @@
     <Compile Include="Configuration\Settings.cs" />
     <Compile Include="Entities\EventItem.cs" />
     <Compile Include="Entities\PlanData.cs" />
-    <Compile Include="EventRoot.cs" />
+    <Compile Include="Entities\EventRoot.cs" />
     <Compile Include="Events\Args\RegisterUserEventArgs.cs" />
     <Compile Include="Events\DeRegisterUser.cs" />
     <Compile Include="Events\ItemEventHandler.cs" />
     <Compile Include="Events\RegisterUser.cs" />
     <Compile Include="ItemGuids.cs" />
     <Compile Include="ItemUtil.cs" />
+    <Compile Include="Pipelines\Args\FindEventRootsArgs.cs" />
     <Compile Include="Pipelines\FindEventRoots.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
