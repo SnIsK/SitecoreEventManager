@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Exceptions;
 using Sitecore.Modules.EventManager.Configuration;
 using Sitecore.Pipelines;
 using System.Linq;
 
-namespace Sitecore.Modules.EventManager
+namespace Sitecore.Modules.EventManager.Entities
 {
-    public class EventRoot
+    public class EventRoot : CustomItem
     {
-        private readonly Item _rootItem;
-
-        private EventRoot(Item rootItem)
+        
+        private EventRoot(Item rootItem) : base(rootItem)
         {
-            _rootItem = rootItem;
         }
 
         public static EventRoot Current
@@ -49,7 +48,7 @@ namespace Sitecore.Modules.EventManager
         public Item CreateEvent(string eventName)
         {
             string proposeValidItemName = Sitecore.Data.Items.ItemUtil.ProposeValidItemName(eventName);
-            Item item = this._rootItem.Add(proposeValidItemName, Settings.EventTemplateId);
+            Item item = this.InnerItem.Add(proposeValidItemName, Settings.EventTemplateId);
 
             if (item == null)
             {
@@ -61,10 +60,18 @@ namespace Sitecore.Modules.EventManager
 
         public List<Item> GetEventsItem()
         {
-            return this._rootItem.Children.Select(t => t).ToList();
+            return this.InnerItem.Children.Select(t => t).ToList();
+        }
+
+        public EventItem GetEvent(Guid id)
+        {
+            return new EventItem(this.InnerItem.Axes.GetChild(ID.Parse(id)));
         }
     }
+}
 
+namespace Sitecore.Modules.EventManager
+{
     public class FindEventRootsArgs : PipelineArgs
     {
         public FindEventRootsArgs()

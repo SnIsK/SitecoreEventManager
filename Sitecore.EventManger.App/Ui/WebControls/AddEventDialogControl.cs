@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.UI.WebControls;
 using Sitecore.Data.Items;
+using Sitecore.Modules.EventManager.Entities;
 using Sitecore.Speak.Web.UI.WebControls;
 using Sitecore.Text;
 
@@ -30,7 +31,7 @@ namespace Sitecore.Modules.EventManager.App.Ui.WebControls
 
         private void OnAcceptClick(object sender, EventArgs e)
         {
-            EventRoot eventRoot = Sitecore.Modules.EventManager.EventRoot.Current;
+            EventRoot eventRoot = EventRoot.Current;
             Item eventItem = eventRoot.CreateEvent(this._textBox.Text);
 
             //TODO: Make TaskPageUtil, to handle this

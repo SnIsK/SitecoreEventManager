@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Sitecore.Modules.EventManager.App.Entities;
+using Sitecore.Modules.EventManager.Entities;
 
 namespace Sitecore.Modules.EventManager.App.Repositories
 {

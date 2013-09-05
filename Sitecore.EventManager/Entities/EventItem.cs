@@ -5,6 +5,7 @@ using Sitecore.Analytics.Automation.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Events;
+using Sitecore.Links;
 using Sitecore.Modules.EventManager.Events.Args;
 using Sitecore.Security.Accounts;
 
@@ -70,8 +71,15 @@ namespace Sitecore.Modules.EventManager.Entities
             }
         }
 
+        public String Url
+        {
+            get
+            {
+                return LinkManager.GetItemUrl(this.InnerItem);
+            }
+        }
 
-        public EventRootItem EventRoot
+        public EventItem EventRoot
         {
             get
             {
@@ -80,7 +88,7 @@ namespace Sitecore.Modules.EventManager.Entities
                 if (eventRoot == null)
                     return null;
 
-                return new EventRootItem(eventRoot);
+                return new EventItem(eventRoot);
             }
         }
 
@@ -125,6 +133,16 @@ namespace Sitecore.Modules.EventManager.Entities
             var stateVisitors = AutomationManager.Provider.GetStateVisitors(AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId)).Guid);
 
             return stateVisitors;
+        }
+
+        public Item EngangementPlanItem
+        {
+            get
+            {
+                var engagementPlanItem = (Sitecore.Data.Fields.LookupField)this.InnerItem.Fields["Standard Message Plan"];
+
+                return engagementPlanItem.TargetItem;
+            }
         }
     }
 }

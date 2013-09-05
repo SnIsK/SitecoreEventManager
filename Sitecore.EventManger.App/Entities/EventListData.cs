@@ -49,7 +49,7 @@ namespace Sitecore.Modules.EventManager.App.Entities
             var fromField = (Sitecore.Data.Fields.DateField)input.Fields["From"];
             data.From = fromField.DateTime;
 
-            var eventItem = new Sitecore.Modules.EventManager.Entities.EventRootItem(ItemUtil.GetContentItem(ID.Parse(data.Id)));
+            var eventItem = new Sitecore.Modules.EventManager.Entities.EventItem(ItemUtil.GetContentItem(ID.Parse(data.Id)));
 
             try
             {

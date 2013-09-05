@@ -54,7 +54,6 @@
     <Compile Include="AnalyticsHelper.cs" />
     <Compile Include="Configuration\Settings.cs" />
     <Compile Include="Entities\EventItem.cs" />
-    <Compile Include="Entities\EventRootItem.cs" />
     <Compile Include="Entities\PlanData.cs" />
     <Compile Include="EventRoot.cs" />
     <Compile Include="Events\Args\RegisterUserEventArgs.cs" />
