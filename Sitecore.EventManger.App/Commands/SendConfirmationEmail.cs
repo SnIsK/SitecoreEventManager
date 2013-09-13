@@ -16,6 +16,11 @@ namespace Sitecore.Modules.EventManager.App.Commands
             var eventItem = new EventItem(ItemUtil.GetContentItem(Guid.Parse(itemId)));
             string userName = context.Parameters["ids"];
 
+            if (string.IsNullOrWhiteSpace(userName))
+            {
+                throw new Exception("There was no one selected");
+            }
+
             User user = User.FromName(string.Format("extranet\\{0}", userName.TrimStart('{').TrimEnd('}')), false);
 
             eventItem.SendConfirmationEmail(user);
