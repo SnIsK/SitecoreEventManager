@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {B9F7D691-CC54-42AA-8F8B-836FEC450957}
+id: {D8565D1B-7BD1-4BC9-9979-D65E31F50023}
 database: master
-path: /sitecore/system/Modules/SPEAK/Event Manager/Controls/List Views/RegisteredList/Email
+path: /sitecore/system/Modules/SPEAK/Event Manager/Controls/List Views/RegisteredList/ID
 parent: {479A18CF-480F-4D14-BE36-0880BBF5B398}
-name: Email
+name: ID
 master: {00000000-0000-0000-0000-000000000000}
 template: {6A296415-6F3E-448A-B818-D6FFC596A43E}
 templatekey: Column Field
@@ -13,49 +13,63 @@ templatekey: Column Field
 field: {5F160DE8-B540-494C-9029-2BFBD0610A56}
 name: DataField
 key: datafield
-content-length: 5
+content-length: 2
 
-Email
+Id
+----field----
+field: {18DDED2E-24B5-4AD9-B21D-8FFC91C5A9E4}
+name: Key
+key: key
+content-length: 1
+
+1
+----field----
+field: {2FE40B0B-CBF1-4B9B-9EA6-3983DC4B94C5}
+name: Hidden
+key: hidden
+content-length: 0
+
+
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
 content-length: 3
 
-300
+100
 ----version----
 language: en
 version: 1
-revision: 1d104117-2330-4c68-b1d3-cd258142c7ee
+revision: b0a7ba19-b7d4-4523-945b-017632238125
 
 ----field----
 field: {46D020FF-CA0B-40F9-8B6D-5FCCE3370376}
 name: HeaderText
 key: headertext
-content-length: 5
+content-length: 2
 
-Email
+ID
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 15
 
-20130606T213600
+20130913T132110
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-1d104117-2330-4c68-b1d3-cd258142c7ee
+b0a7ba19-b7d4-4523-945b-017632238125
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20130913T132208:635146753284404762
+20130913T140732:635146780524152108
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

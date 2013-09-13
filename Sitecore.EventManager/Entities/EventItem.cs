@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using Sitecore.Analytics.Automation.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
+using Sitecore.Diagnostics;
 using Sitecore.Events;
 using Sitecore.Links;
 using Sitecore.Modules.EventManager.Events.Args;
@@ -151,12 +153,60 @@ namespace Sitecore.Modules.EventManager.Entities
             return stateVisitors;
         }
 
+        public bool SendConfirmationEmail(User user)
+        {
+            try
+            {
+                using (var client = new SmtpClient())
+                {
+                    var mailMessage = new MailMessage();
+                    mailMessage.From = new MailAddress(this.EmailFrom.Value, this.EmailName.Value);
+                    mailMessage.To.Add(new MailAddress(user.Profile.Email, user.Profile.FullName));
+                    string mailContent = TransformMail(user);
+                    mailMessage.IsBodyHtml = true;
+                    mailMessage.Body = mailContent;
+                    client.Send(mailMessage);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(string.Format("Error sending mail to {0}", user.Profile.Email), ex, this);
+                return false;
+            }
+            return true;
+        }
+
+        private string TransformMail(User user)
+        {
+            var content = this.EmailMessage.Value.Replace(Environment.NewLine, "<br />");
+            if (content.Contains("[Name]"))
+            {
+                content = content.Replace("[Name]", user.Profile.FullName);
+            }
+
+            if (content.Contains("[EventStart]"))
+            {
+                content = content.Replace("[EventStart]", this.From.DateTime.ToString("HH.mm d. MMMM yyyy"));
+            }
+
+            if (content.Contains("[EventLocation"))
+            {
+                content = content.Replace("[EventLocation]", this.Location.Value);
+            }
+            if (content.Contains("[EventUnregisterLink]"))
+            {
+                content = content.Replace("[EventUnregisterLink]", string.Format("<a href=\"{0}?unregister=true&email={1}\">{0}?unregister=true&email={1}</a>",
+                    this.FullUrl, user.Profile.Email));
+            }
+            return content;
+        }
+
         public Item EngangementPlanItem
         {
             get
             {
                 var engagementPlanItem =
-                    (Sitecore.Data.Fields.LookupField) this.InnerItem.Fields["Standard Message Plan"];
+                    (Sitecore.Data.Fields.LookupField)this.InnerItem.Fields["Standard Message Plan"];
 
                 return engagementPlanItem.TargetItem;
             }

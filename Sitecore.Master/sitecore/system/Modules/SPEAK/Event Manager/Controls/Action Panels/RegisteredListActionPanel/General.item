@@ -1,28 +1,21 @@
 ----item----
 version: 1
-id: {579A96C3-D154-4C56-B2F3-FD5FD0DE1780}
+id: {BE996003-44B6-47C6-B747-32D0A8F8479B}
 database: master
-path: /sitecore/system/Modules/SPEAK/Event Manager/Task pages/EventOverviewTaskPage/General
-parent: {08041506-D739-4E92-8340-C0B8679EFB26}
+path: /sitecore/system/Modules/SPEAK/Event Manager/Controls/Action Panels/RegisteredListActionPanel/General
+parent: {77CEB6C6-512E-40D4-A476-EA083186E01D}
 name: General
 master: {00000000-0000-0000-0000-000000000000}
-template: {5B1F7DB3-486E-4C18-B048-3985F1ED619F}
-templatekey: Tab page
+template: {BD17ACBF-F5AC-4C05-8285-D0835B64C2E3}
+templatekey: Action group
 
-----field----
-field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
-name: __Sortorder
-key: __sortorder
-content-length: 3
-
-100
 ----version----
 language: en
 version: 1
-revision: fa70f413-5d13-4e4b-ac11-829193e919a3
+revision: 815af3ed-e0a9-4c14-8fed-1022f5d85829
 
 ----field----
-field: {657BCD86-D24F-49BF-9F1A-528EB6D96381}
+field: {DFDE5E91-4B83-4D97-975E-E34C00EB1822}
 name: Title
 key: title
 content-length: 7
@@ -34,21 +27,21 @@ name: __Created
 key: __created
 content-length: 15
 
-20130528T214300
+20130606T211856
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-fa70f413-5d13-4e4b-ac11-829193e919a3
+815af3ed-e0a9-4c14-8fed-1022f5d85829
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20130912T232210:635146249306439095
+20130606T211856:635061503366125827
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

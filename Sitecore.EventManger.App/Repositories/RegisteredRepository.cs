@@ -22,13 +22,14 @@ namespace Sitecore.Modules.EventManager.App.Repositories
 
 
             List<RegisteredUser> subsribers = new List<RegisteredUser>();
-
+            int i = 0 ;
             foreach (var registered in eventItem.GetRegistered())
             {
                 User fromName = User.FromName(registered, false);
 
                 subsribers.Add(new RegisteredUser()
                 {
+                    Id = fromName.GetLocalName(),
                     Email =  fromName.Profile.Email,
                     Name = fromName.Profile.FullName
                 });

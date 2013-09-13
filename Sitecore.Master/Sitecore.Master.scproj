@@ -190,6 +190,26 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\RegisteredListActionPanel.item">
+      <Icon>/temp/IconCache/Control/32x32/menu_b_h.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\RegisteredListActionPanel\General.item">
+      <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\RegisteredListActionPanel\General\ExportList.item">
+      <Icon>/temp/IconCache/Control/32x32/socket_b_d.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\RegisteredListActionPanel\General\SendConfirmationMessage.item">
+      <Icon>/temp/IconCache/Control/32x32/socket_b_d.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Dialogs.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -255,6 +275,11 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\RegisteredList\ID.item">
+      <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\RegisteredList\Name.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
@@ -277,6 +302,31 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage.item">
       <Icon>/temp/IconCache/People/32x32/wind_engines.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Email.item">
+      <Icon>/temp/IconCache/Applications/16x16/form_blue.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Email\Email Message.item">
+      <Icon>/temp/IconCache/Applications/32x32/form_green.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Email\Email Message\Email.item">
+      <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Email\Email Message\From Email.item">
+      <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Email\Email Message\Name.item">
+      <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
@@ -371,6 +421,26 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Analytics\Standard Message Plan.item">
+      <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Event Manager\Event\Email Data.item">
+      <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Event Manager\Event\Email Data\EmailMessage.item">
+      <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Event Manager\Event\Email Data\EmailName.item">
+      <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Event Manager\Event\Email Data\FromEmail.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
