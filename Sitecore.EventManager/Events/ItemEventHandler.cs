@@ -2,6 +2,7 @@
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Events;
+using Sitecore.Workflows;
 
 namespace Sitecore.Modules.EventManager.Events
 {
@@ -31,6 +32,28 @@ namespace Sitecore.Modules.EventManager.Events
 
             eventItem.PlanId = copiedPlanItem.ID.Guid;
             item.Editing.EndEdit();
+
+            //Set the workflow state on the plan to deploy.
+            // TODO: Move this to a deploy button instead!
+            IWorkflow workflow = copiedPlanItem.State.GetWorkflow();
+
+            Item workflowCommandItem = ItemUtil.GetContentItem(Guid.Parse("{4044A9C4-B583-4B57-B5FF-2791CB0351DF}"));
+            if (workflow == null)
+            {
+                copiedPlanItem.Database.DataManager.SetWorkflowInfo(copiedPlanItem,
+                    new WorkflowInfo(workflowCommandItem.Parent.Parent.ID.ToString(), workflowCommandItem.Parent.ID.ToString()));
+
+                workflow = copiedPlanItem.State.GetWorkflow();
+            }
+
+            WorkflowInfo workflowInfo = copiedPlanItem.Database.DataManager.GetWorkflowInfo(copiedPlanItem);
+            if (workflowInfo == null || workflowInfo.StateID != workflowCommandItem.Parent.ID.ToString())
+            {
+                return;
+            }
+
+            WorkflowResult workflowResult = workflow.Execute("{4044A9C4-B583-4B57-B5FF-2791CB0351DF}", copiedPlanItem,
+                "Executed from Events save event", false, new object());
         }
     }
 }
