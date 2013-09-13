@@ -1,54 +1,54 @@
 ----item----
 version: 1
-id: {62F5DA6C-C068-4088-8390-9BAFF9289B7C}
+id: {2C962E09-3319-4CAC-9362-CD7197D2A09F}
 database: master
-path: /sitecore/system/Modules/SPEAK/Event Manager/Controls/Action Panels/Recent Created Events/General/ExportList
-parent: {34B8F5E2-AB22-45B0-A769-7BC21876B0F2}
-name: ExportList
+path: /sitecore/system/Modules/SPEAK/Event Manager/Task pages/EventOverviewTaskPage/General/General Event Info/Location
+parent: {2CEB4328-879A-4DC2-A02C-216071456804}
+name: Location
 master: {00000000-0000-0000-0000-000000000000}
-template: {AAF96A7E-164D-401C-BC35-DA15F41AA9EE}
-templatekey: Action
+template: {71C49A8A-2F17-462C-85D9-DB2E87399D36}
+templatekey: Editor field
 
 ----field----
-field: {DA590941-D575-45D7-B344-15DB4D94E9F6}
-name: Click
-key: click
-content-length: 27
+field: {34152A74-54C5-4406-A71C-F0D259E5CC29}
+name: Name
+key: name
+content-length: 8
 
-eventmanager:exportuserlist
+Location
 ----version----
 language: en
 version: 1
-revision: d9ed9839-f814-4051-82cb-42bae3fe1c7b
+revision: 418dfae0-9d06-42ec-bdac-4f5061152b8b
 
 ----field----
-field: {E52066BC-420A-4570-88FB-07815A9AECC4}
+field: {7977EAC8-73F5-4FFB-B15C-55B8EDA2E185}
 name: Title
 key: title
-content-length: 11
+content-length: 8
 
-Export List
+Location
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 15
 
-20130606T214200
+20130905T134847
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-d9ed9839-f814-4051-82cb-42bae3fe1c7b
+418dfae0-9d06-42ec-bdac-4f5061152b8b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20130904T134446:635138990861200658
+20130905T134847:635139857272830967
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

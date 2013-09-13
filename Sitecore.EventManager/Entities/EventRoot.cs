@@ -11,7 +11,6 @@ namespace Sitecore.Modules.EventManager.Entities
 {
     public class EventRoot : CustomItem
     {
-        
         private EventRoot(Item rootItem) : base(rootItem)
         {
         }
@@ -58,9 +57,15 @@ namespace Sitecore.Modules.EventManager.Entities
             return item;
         }
 
-        public List<Item> GetEventsItem()
+        public List<Item> GetEvents()
         {
             return this.InnerItem.Children.Select(t => t).ToList();
+        }
+
+        public List<Item> GetEvents(DateTime afterDate)
+        {
+            var eventsItem = this.GetEvents().Select(t => new EventItem(t)).Where(t => t.From.DateTime.Date >= afterDate.Date);
+            return eventsItem.Select(t => t.InnerItem).ToList();
         }
 
         public EventItem GetEvent(Guid id)

@@ -13,7 +13,6 @@ namespace Sitecore.Modules.EventManager.Entities
 {
     public class EventItem : CustomItem
     {
-
         public EventItem(Item innerItem)
             : base(innerItem)
         {
@@ -25,57 +24,70 @@ namespace Sitecore.Modules.EventManager.Entities
         public EventItem()
             : base(Sitecore.Context.Item)
         {
-
         }
 
         public DateField To
         {
-            get
-            {
-                return this.InnerItem.Fields["To"];
-            }
+            get { return this.InnerItem.Fields["To"]; }
         }
 
         public DateField From
         {
-            get
-            {
-                return this.InnerItem.Fields["From"];
-            }
+            get { return this.InnerItem.Fields["From"]; }
         }
 
         public TextField Title
         {
-            get
-            {
-
-                return this.InnerItem.Fields["Title"];
-            }
+            get { return this.InnerItem.Fields["Title"]; }
         }
 
         public TextField Description
         {
-            get
-            {
-
-                return this.InnerItem.Fields["Description"];
-            }
+            get { return this.InnerItem.Fields["Description"]; }
         }
 
         public TextField Location
         {
-            get
-            {
-
-                return this.InnerItem.Fields["Location"];
-            }
+            get { return this.InnerItem.Fields["Location"]; }
         }
 
         public String Url
         {
+            get { return LinkManager.GetItemUrl(this.InnerItem); }
+        }
+
+        public String FullUrl
+        {
             get
             {
-                return LinkManager.GetItemUrl(this.InnerItem);
+                UrlOptions urlOptions = UrlOptions.DefaultOptions;
+
+                urlOptions.AlwaysIncludeServerUrl = true;
+                return LinkManager.GetItemUrl(this.InnerItem, urlOptions);
+            }
+        }
+
+        public TextField EmailMessage
+        {
+            get
+            {
+                return this.InnerItem.Fields["EmailMessage"];
+            }
+        }
+
+        public TextField EmailName
+        {
+            get
+            {
+                return this.InnerItem.Fields["EmailName"];
+            }
+        }
+
+        public TextField EmailFrom
+        {
+            get
+            {
+                return this.InnerItem.Fields["FromEmail"];
             }
         }
 
@@ -83,7 +95,9 @@ namespace Sitecore.Modules.EventManager.Entities
         {
             get
             {
-                var eventRoot = this.InnerItem.Axes.GetAncestors().FirstOrDefault(t => t.TemplateID == Configuration.Settings.RootTemplateId);
+                var eventRoot =
+                    this.InnerItem.Axes.GetAncestors()
+                        .FirstOrDefault(t => t.TemplateID == Configuration.Settings.RootTemplateId);
 
                 if (eventRoot == null)
                     return null;
@@ -130,7 +144,9 @@ namespace Sitecore.Modules.EventManager.Entities
 
         public List<string> GetRegistered()
         {
-            var stateVisitors = AutomationManager.Provider.GetStateVisitors(AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId)).Guid);
+            var stateVisitors =
+                AutomationManager.Provider.GetStateVisitors(
+                    AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId)).Guid);
 
             return stateVisitors;
         }
@@ -139,7 +155,8 @@ namespace Sitecore.Modules.EventManager.Entities
         {
             get
             {
-                var engagementPlanItem = (Sitecore.Data.Fields.LookupField)this.InnerItem.Fields["Standard Message Plan"];
+                var engagementPlanItem =
+                    (Sitecore.Data.Fields.LookupField) this.InnerItem.Fields["Standard Message Plan"];
 
                 return engagementPlanItem.TargetItem;
             }

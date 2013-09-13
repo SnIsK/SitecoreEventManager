@@ -25,14 +25,14 @@ namespace Sitecore.Modules.EventManager.App.Repositories
                 var strings = sortColumn.Split(' ');
                 if (strings[1] == "DESC")
                 {
-                    return this._eventRoot.GetEventsItem().ConvertAll(EventListData.Converter).OrderByDescending(t =>
+                    return this._eventRoot.GetEvents().ConvertAll(EventListData.Converter).OrderByDescending(t =>
                     {
                         var propertyInfo = t.GetType().GetProperty(strings[0]);
                         var value = propertyInfo.GetValue(t);
                         return value;
                     }).ToList();    
                 }
-                return this._eventRoot.GetEventsItem().ConvertAll(EventListData.Converter).OrderBy(t =>
+                return this._eventRoot.GetEvents().ConvertAll(EventListData.Converter).OrderBy(t =>
                 {
                     var propertyInfo = t.GetType().GetProperty(strings[0]);
                     var value = propertyInfo.GetValue(t);
@@ -40,7 +40,7 @@ namespace Sitecore.Modules.EventManager.App.Repositories
                 }).ToList();  
 
             }
-            return this._eventRoot.GetEventsItem().ConvertAll(EventListData.Converter);
+            return this._eventRoot.GetEvents().ConvertAll(EventListData.Converter);
         }
     }
 }
