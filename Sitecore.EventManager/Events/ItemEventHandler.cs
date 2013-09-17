@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Events;
+using Sitecore.Modules.EventManager.Entities;
 using Sitecore.Workflows;
 
 namespace Sitecore.Modules.EventManager.Events
@@ -15,15 +17,31 @@ namespace Sitecore.Modules.EventManager.Events
             if (item == null)
                 return;
 
-            if (item.TemplateID == Configuration.Settings.EventTemplateId)
+            if (item.TemplateID == Configuration.Settings.EventTemplateId || item.Template.BaseTemplates.Any(t => t.ID.Guid == Configuration.Settings.EventTemplateId.ID.Guid))
             {
+                item.Editing.BeginEdit();
                 this.CopyPlan(item);
+                this.CopyEmailTemplate(item);
+                item.Editing.EndEdit();
             }
+        }
+
+        private void CopyEmailTemplate(Item item)
+        {
+            var eventitem = new EventItem(item);
+
+            EventRoot eventRoot = eventitem.EventRoot;
+
+            item.Fields["EmailMessage"].Value = eventRoot.EmailMessage.Value;
+            item.Fields["EmailSubject"].Value = eventRoot.EmailSubject.Value;
+            item.Fields["EmailName"].Value = eventRoot.EmailName.Value;
+            item.Fields["FromEmail"].Value = eventRoot.EmailFrom.Value;
+
+
         }
 
         private void CopyPlan(Item item)
         {
-            item.Editing.BeginEdit();
             var eventItem = new Entities.EventItem(item);
             var planRoot = (Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database).GetItem("{963678A4-869C-48AB-915B-D18C6D2AF357}");
 
@@ -31,7 +49,6 @@ namespace Sitecore.Modules.EventManager.Events
             var copiedPlanItem = eventItem.EventRoot.EngangementPlanItem.CopyTo(planRoot, item.Name);
 
             eventItem.PlanId = copiedPlanItem.ID.Guid;
-            item.Editing.EndEdit();
 
             //Set the workflow state on the plan to deploy.
             // TODO: Move this to a deploy button instead!

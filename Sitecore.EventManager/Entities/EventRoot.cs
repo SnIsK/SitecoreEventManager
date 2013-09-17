@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Sitecore.Data;
+using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Exceptions;
 using Sitecore.Modules.EventManager.Configuration;
@@ -11,7 +12,7 @@ namespace Sitecore.Modules.EventManager.Entities
 {
     public class EventRoot : CustomItem
     {
-        private EventRoot(Item rootItem) : base(rootItem)
+        public EventRoot(Item rootItem) : base(rootItem)
         {
         }
 
@@ -41,13 +42,48 @@ namespace Sitecore.Modules.EventManager.Entities
         }
 
         /// <summary>
+        /// The event engangement plan
+        /// It holds information about registeret, pageviews, and unregistered users
+        /// </summary>
+        public Item EngangementPlanItem
+        {
+            get
+            {
+                var engagementPlanItem =
+                    (Sitecore.Data.Fields.LookupField) this.InnerItem.Fields["Standard Message Plan"];
+
+                return engagementPlanItem.TargetItem;
+            }
+        }
+
+        public TextField EmailMessage
+        {
+            get { return this.InnerItem.Fields["EmailMessage"]; }
+        }
+
+        public TextField EmailSubject
+        {
+            get { return this.InnerItem.Fields["EmailSubject"]; }
+        }
+
+        public TextField EmailName
+        {
+            get { return this.InnerItem.Fields["EmailName"]; }
+        }
+
+        public TextField EmailFrom
+        {
+            get { return this.InnerItem.Fields["FromEmail"]; }
+        }
+
+        /// <summary>
         /// Creates event item under the root
         /// </summary>
         /// <param name="eventName">The name of the event</param>
         public Item CreateEvent(string eventName)
         {
             string proposeValidItemName = Sitecore.Data.Items.ItemUtil.ProposeValidItemName(eventName);
-            Item item = this.InnerItem.Add(proposeValidItemName, Settings.EventTemplateId);
+            Item item = this.InnerItem.Add(proposeValidItemName, Settings.EventBranchId);
 
             if (item == null)
             {
@@ -64,7 +100,8 @@ namespace Sitecore.Modules.EventManager.Entities
 
         public List<Item> GetEvents(DateTime afterDate)
         {
-            var eventsItem = this.GetEvents().Select(t => new EventItem(t)).Where(t => t.From.DateTime.Date >= afterDate.Date);
+            var eventsItem =
+                this.GetEvents().Select(t => new EventItem(t)).Where(t => t.From.DateTime.Date >= afterDate.Date);
             return eventsItem.Select(t => t.InnerItem).ToList();
         }
 

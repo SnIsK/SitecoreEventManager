@@ -18,6 +18,12 @@ namespace Sitecore.Modules.EventManager.Events
             var eventArgs = Event.ExtractParameter(args, 1) as RegisterUserEventArgs;
 
             Assert.IsNotNull(eventArgs, "EventArgs are null!");
+
+            if (eventArgs.Error)
+            {
+                return;
+            }
+
             var user = eventArgs.User;
 
 
@@ -40,7 +46,10 @@ namespace Sitecore.Modules.EventManager.Events
 
             Assert.IsNotNull(eventArgs, "EventArgs are null!");
 
-            eventArgs.EventItem.SendConfirmationEmail(eventArgs.User);
+            if (!eventArgs.EventItem.SendConfirmationEmail(eventArgs.User))
+            {
+                eventArgs.Error = true;
+            }
         }
     }
 }

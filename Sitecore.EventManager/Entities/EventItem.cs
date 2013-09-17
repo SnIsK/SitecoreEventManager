@@ -77,6 +77,14 @@ namespace Sitecore.Modules.EventManager.Entities
             }
         }
 
+        public TextField EmailSubject
+        {
+            get
+            {
+                return this.InnerItem.Fields["EmailSubject"];
+            }
+        }
+
         public TextField EmailName
         {
             get
@@ -93,7 +101,7 @@ namespace Sitecore.Modules.EventManager.Entities
             }
         }
 
-        public EventItem EventRoot
+        public EventRoot EventRoot
         {
             get
             {
@@ -104,7 +112,7 @@ namespace Sitecore.Modules.EventManager.Entities
                 if (eventRoot == null)
                     return null;
 
-                return new EventItem(eventRoot);
+                return new EventRoot(eventRoot);
             }
         }
 
@@ -120,17 +128,21 @@ namespace Sitecore.Modules.EventManager.Entities
         /// </summary>
         /// <param name="user">The user to signup for the event</param>
         /// <returns></returns>
-        public void RegisterUser(User user)
+        public bool RegisterUser(User user)
         {
             if (user == null)
             {
                 throw new ArgumentNullException("user", "user cant be null");
             }
-            Event.RaiseEvent("eventmanager:registeruser", this, new RegisterUserEventArgs()
+            var eventArgs = new RegisterUserEventArgs()
             {
                 EventItem = this,
                 User = user
-            });
+            };
+
+            Event.RaiseEvent("eventmanager:registeruser", this, eventArgs);
+
+            return !eventArgs.Error;
         }
 
         /// <summary>
@@ -165,6 +177,7 @@ namespace Sitecore.Modules.EventManager.Entities
                     string mailContent = TransformMail(user);
                     mailMessage.IsBodyHtml = true;
                     mailMessage.Body = mailContent;
+                    mailMessage.Subject = this.EmailSubject.Value.Replace("[Title", this.Title.Value);
                     client.Send(mailMessage);
                 }
             }
@@ -179,6 +192,11 @@ namespace Sitecore.Modules.EventManager.Entities
         private string TransformMail(User user)
         {
             var content = this.EmailMessage.Value.Replace(Environment.NewLine, "<br />");
+            if (content.Contains("[Title]"))
+            {
+                content = content.Replace("[Title]", this.Title.Value);
+            }
+
             if (content.Contains("[Name]"))
             {
                 content = content.Replace("[Name]", user.Profile.FullName);
@@ -186,7 +204,7 @@ namespace Sitecore.Modules.EventManager.Entities
 
             if (content.Contains("[EventStart]"))
             {
-                content = content.Replace("[EventStart]", this.From.DateTime.ToString("HH.mm d. MMMM yyyy"));
+                content = content.Replace("[EventStart]", this.From.DateTime.ToString("H.mm d. MMMM yyyy"));
             }
 
             if (content.Contains("[EventLocation"))

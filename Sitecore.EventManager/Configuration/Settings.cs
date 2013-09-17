@@ -5,6 +5,17 @@ namespace Sitecore.Modules.EventManager.Configuration
 {
     public static class Settings
     {
+
+        public static TemplateID EventBranchId
+        {
+            get
+            {
+                string eventTemplateId = Sitecore.Configuration.Settings.GetSetting("EventManager.EventBranchId");
+                Assert.IsNotNullOrEmpty(eventTemplateId, "Missing EventManager.EventBranchId setting");
+                return new TemplateID(ID.Parse(eventTemplateId));
+            }
+        }
+
         public static TemplateID EventTemplateId
         {
             get
