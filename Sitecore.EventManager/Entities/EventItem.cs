@@ -149,10 +149,21 @@ namespace Sitecore.Modules.EventManager.Entities
         /// Changes the user to the removed state
         /// </summary>
         /// <param name="user">The user to remove</param>
+        /// <param name="fromCommand">Is it run from a command</param>
         /// <returns></returns>
-        public void DeregistrationUser(User user)
+        public bool UnregistrationUser(User user, bool fromCommand = false)
         {
-            Event.RaiseEvent("eventmanager:registeruser", user, this);
+            var eventArgs = new UnregisterUserEventArgs()
+            {
+                EventItem = this,
+                User = user,
+                FromCommand = fromCommand
+            };
+
+            Event.RaiseEvent("eventmanager:unregisteruser", this, eventArgs);
+
+
+            return !eventArgs.Error;
         }
 
 

@@ -58,6 +58,7 @@
     <Compile Include="Commands\ExportSignupList.cs" />
     <Compile Include="Commands\OpenPageEditor.cs" />
     <Compile Include="Commands\SendConfirmationEmail.cs" />
+    <Compile Include="Commands\UnregisterUSer.cs" />
     <Compile Include="CommandUtil.cs" />
     <Compile Include="Entities\EventListData.cs" />
     <Compile Include="Entities\RegisteredUser.cs" />

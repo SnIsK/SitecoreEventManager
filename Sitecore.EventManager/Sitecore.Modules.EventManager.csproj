@@ -57,9 +57,11 @@
     <Compile Include="Entities\PlanData.cs" />
     <Compile Include="Entities\EventRoot.cs" />
     <Compile Include="Events\Args\RegisterUserEventArgs.cs" />
+    <Compile Include="Events\Args\UnregisterUserEventArgs.cs" />
     <Compile Include="Events\DeRegisterUser.cs" />
     <Compile Include="Events\ItemEventHandler.cs" />
     <Compile Include="Events\RegisterUser.cs" />
+    <Compile Include="Events\UnregisterUser.cs" />
     <Compile Include="ItemGuids.cs" />
     <Compile Include="ItemUtil.cs" />
     <Compile Include="Pipelines\Args\FindEventRootsArgs.cs" />

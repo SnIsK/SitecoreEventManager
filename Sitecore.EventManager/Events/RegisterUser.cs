@@ -33,7 +33,7 @@ namespace Sitecore.Modules.EventManager.Events
 
             if (stateVisistors.Any(t => t == user.Profile.UserName))
             {
-                AutomationManager.Provider.ChangeUserState(user.Profile.UserName, signupState.Guid, removedState.Guid);
+                AutomationManager.Provider.ChangeUserState(user.Profile.UserName, removedState.Guid, signupState.Guid);
             }
 
             AutomationManager.Provider.CreateAutomationState(user.Profile.UserName, eventArgs.EventItem.PlanId, signupState.ToGuid());
