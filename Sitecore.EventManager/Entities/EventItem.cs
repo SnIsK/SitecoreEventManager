@@ -188,7 +188,7 @@ namespace Sitecore.Modules.EventManager.Entities
                     string mailContent = TransformMail(user);
                     mailMessage.IsBodyHtml = true;
                     mailMessage.Body = mailContent;
-                    mailMessage.Subject = this.EmailSubject.Value.Replace("[Title", this.Title.Value);
+                    mailMessage.Subject = this.EmailSubject.Value.Replace("[Title]", this.Title.Value);
                     client.Send(mailMessage);
                 }
             }
@@ -215,17 +215,44 @@ namespace Sitecore.Modules.EventManager.Entities
 
             if (content.Contains("[EventStart]"))
             {
-                content = content.Replace("[EventStart]", this.From.DateTime.ToString("H.mm d. MMMM yyyy"));
+                if (this.From.DateTime.Date != this.To.DateTime.Date)
+                {
+                    content = content.Replace("[EventStart]", this.From.DateTime.ToString("d. MMMM yyyy"));
+                }
+                else
+                {
+                    content = content.Replace("[EventStart]", this.From.DateTime.ToString("H.mm d. MMMM yyyy"));
+                }
             }
 
-            if (content.Contains("[EventLocation"))
+            if (content.Contains("[EventEnd]"))
+            {
+                if (this.From.DateTime.Date != this.To.DateTime.Date)
+                {
+                    content = content.Replace("[EventEnd]", this.To.DateTime.ToString("d. MMMM yyyy"));
+                }
+                else
+                {
+                    content = content.Replace("[EventEnd]", this.To.DateTime.ToString("H.mm d. MMMM yyyy"));
+                }
+            }
+
+            if (content.Contains("[EventLocation]"))
             {
                 content = content.Replace("[EventLocation]", this.Location.Value);
             }
-            if (content.Contains("[EventUnregisterLink]"))
+            if (content.Contains("[#EventUnregisterLink]") && content.Contains("[/EventUnregisterLink]"))
             {
-                content = content.Replace("[EventUnregisterLink]", string.Format("<a href=\"{0}?unregister=true&email={1}\">{0}?unregister=true&email={1}</a>",
-                    this.FullUrl, user.Profile.Email));
+                content = content.Replace("[#EventUnregisterLink]",
+                    string.Format("<a href=\"{0}/Unregister?email={1}\">",
+                        this.FullUrl, user.Profile.Email));
+
+                content = content.Replace("[/EventUnregisterLink]", "</a>");
+            }
+            else
+            {
+                content = content.Replace("[#EventUnregisterLink]", string.Empty);
+                content = content.Replace("[/EventUnregisterLink]", string.Empty);
             }
             return content;
         }
