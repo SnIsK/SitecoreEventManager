@@ -101,7 +101,7 @@ namespace Sitecore.Modules.EventManager.Entities
         public List<Item> GetEvents(DateTime afterDate)
         {
             var eventsItem =
-                this.GetEvents().Select(t => new EventItem(t)).Where(t => t.From.DateTime.Date >= afterDate.Date);
+                this.GetEvents().Select(t => new EventItem(t)).Where(t => t.To.DateTime.Date >= afterDate.Date || t.From.DateTime.Date >= afterDate.Date);
             return eventsItem.Select(t => t.InnerItem).ToList();
         }
 

@@ -37,6 +37,7 @@ namespace Sitecore.Modules.EventManager.App.Ui.WebControls
             //TODO: Make TaskPageUtil, to handle this
             UrlString url = new UrlString("/SPEAK/Event Manager/Task pages/EventOverviewTaskPage.aspx");
             url.Parameters.Add("id", eventItem.ID.Guid.ToString());
+            url.Parameters.Add("sc_speakcontentlang", Sitecore.Context.ContentLanguage.Name);
             this.Page.Response.Redirect(url.ToString(), false);
         }
 

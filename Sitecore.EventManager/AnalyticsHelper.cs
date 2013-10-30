@@ -51,6 +51,11 @@ namespace Sitecore.Modules.EventManager
         {
             var database = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
 
+            //if (database == null)
+            //{
+            //    database = Database.GetDatabase("master");
+            //}
+
             var engagementPlan = database.GetItem(engagementId);
 
             Assert.IsNotNull(engagementPlan, string.Format("Could not find engangement plan with id {0}", engagementId.Guid.ToString("D")));

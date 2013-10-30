@@ -13,7 +13,7 @@ namespace Sitecore.Modules.EventManager
 
         public static Item GetContentItem(ID id)
         {
-            return ContentDatabase.GetItem(id);
+            return ContentDatabase.GetItem(id, Sitecore.Context.ContentLanguage);
         }
 
         public static Item GetContentItem(Guid guid)

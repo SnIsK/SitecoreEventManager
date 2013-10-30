@@ -221,7 +221,7 @@ namespace Sitecore.Modules.EventManager.Entities
                 }
                 else
                 {
-                    content = content.Replace("[EventStart]", this.From.DateTime.ToString("H.mm d. MMMM yyyy"));
+                    content = content.Replace("[EventStart]", this.From.DateTime.ToString("d. MMMM yyyy kl. H.mm"));
                 }
             }
 
@@ -233,7 +233,7 @@ namespace Sitecore.Modules.EventManager.Entities
                 }
                 else
                 {
-                    content = content.Replace("[EventEnd]", this.To.DateTime.ToString("H.mm d. MMMM yyyy"));
+                    content = content.Replace("[EventEnd]", this.To.DateTime.ToString("H.mm"));
                 }
             }
 
