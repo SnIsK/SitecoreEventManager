@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
+using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Events;
 using Sitecore.Modules.EventManager.Entities;
+using Sitecore.Publishing;
 using Sitecore.Workflows;
 
 namespace Sitecore.Modules.EventManager.Events
@@ -71,6 +73,16 @@ namespace Sitecore.Modules.EventManager.Events
 
             WorkflowResult workflowResult = workflow.Execute("{4044A9C4-B583-4B57-B5FF-2791CB0351DF}", copiedPlanItem,
                 "Executed from Events save event", false, new object());
+
+
+            PublishOptions options = new PublishOptions(copiedPlanItem.Database, Database.GetDatabase("web"), PublishMode.Smart, copiedPlanItem.Language, DateTime.Now)
+            {
+                Deep = true,
+                RootItem = copiedPlanItem
+            };
+
+            Publisher p = new Publisher(options);
+            p.PublishAsync();
         }
     }
 }
