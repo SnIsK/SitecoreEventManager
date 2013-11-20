@@ -16,38 +16,18 @@ namespace Sitecore.Modules.EventManager.Events
         public void AddUserToAttendeesStore(object sender, EventArgs args)
         {
             var eventArgs = Event.ExtractParameter(args, 1) as RegisterUserEventArgs;
+
+            if (eventArgs == null || eventArgs.Error)
+            {
+                return;
+            }
+
             if (Configuration.Settings.AttendeesStore.AddUser(eventArgs.EventItem, eventArgs.User))
             {
                 eventArgs.Error = true;
             }
         }
-        public void AttachUserToAnalyticsState(object sender, EventArgs args)
-        {
-            var eventArgs = Event.ExtractParameter(args, 1) as RegisterUserEventArgs;
-
-            Assert.IsNotNull(eventArgs, "EventArgs are null!");
-
-            if (eventArgs.Error)
-            {
-                return;
-            }
-
-            var user = eventArgs.User;
-
-
-            var removedState = AnalyticsHelper.GetState("Deregistered", Sitecore.Data.ID.Parse(eventArgs.EventItem.PlanId));
-            var signupState = AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(eventArgs.EventItem.PlanId));
-            var stateVisistors = AutomationManager.Provider.GetStateVisitors(removedState.Guid);
-
-            if (stateVisistors.Any(t => t == user.Profile.UserName))
-            {
-                AutomationManager.Provider.ChangeUserState(user.Profile.UserName, removedState.Guid, signupState.Guid);
-            }
-
-            AutomationManager.Provider.CreateAutomationState(user.Profile.UserName, eventArgs.EventItem.PlanId, signupState.ToGuid());
-        }
-
-
+     
         public void SendConfimationEmail(object sender, EventArgs args)
         {
             var eventArgs = Event.ExtractParameter(args, 1) as RegisterUserEventArgs;

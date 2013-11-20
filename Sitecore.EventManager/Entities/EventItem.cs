@@ -169,12 +169,7 @@ namespace Sitecore.Modules.EventManager.Entities
 
         public List<string> GetRegistered()
         {
-            Configuration.Settings.AttendeesStore.GetRegistered(this.ID.Guid);
-            var stateVisitors =
-                AutomationManager.Provider.GetStateVisitors(
-                    AnalyticsHelper.GetState("Registered", Sitecore.Data.ID.Parse(this.PlanId)).Guid);
-
-            return stateVisitors;
+            return Configuration.Settings.AttendeesStore.GetRegistered(this);
         }
 
         public bool SendConfirmationEmail(User user)
