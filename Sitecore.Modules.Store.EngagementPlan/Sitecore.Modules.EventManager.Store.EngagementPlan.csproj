@@ -7,8 +7,8 @@
     <ProjectGuid>{333248C0-C6CA-496B-A56F-BF375AC6B567}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Modules.Store.EngagementPlan</RootNamespace>
-    <AssemblyName>Sitecore.Modules.Store.EngagementPlan</AssemblyName>
+    <RootNamespace>Sitecore.Modules.EventManager.Store.EngagementPlan</RootNamespace>
+    <AssemblyName>Sitecore.Modules.EventManager.Store.EngagementPlan</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -57,9 +57,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Config\Include\Sitecore.Modules.EventManager.Store.EngagementPlan.config" />
+    <Content Include="App_Config\Include\Sitecore.Modules.EventManager.Store.EngagementPlan.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\Build\BuildSettings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

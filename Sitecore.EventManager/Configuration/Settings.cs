@@ -1,6 +1,7 @@
 ﻿using Sitecore.Data;
 using Sitecore.Diagnostics;
 using Sitecore.Modules.EventManager.Interfaces;
+using Sitecore.Reflection;
 
 namespace Sitecore.Modules.EventManager.Configuration
 {
@@ -44,6 +45,8 @@ namespace Sitecore.Modules.EventManager.Configuration
                 if (_attendessStore == null)
                 {
                     _attendessStore = (IAttendeesStore)Sitecore.Configuration.Settings.GetProviderObject("AttendeesStore", typeof(IAttendeesStore));
+
+                    object objectFromConfig = ReflectionUtil.CreateObjectFromConfig("AttendeesStore");
                 }
 
                 return _attendessStore;

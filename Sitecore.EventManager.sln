@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Some documents", "Some docu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSite", "TestSite\TestSite.csproj", "{088031E9-66A6-44D2-BB07-A44BB28F96DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Modules.Store.EngagementPlan", "Sitecore.Modules.Store.EngagementPlan\Sitecore.Modules.Store.EngagementPlan.csproj", "{333248C0-C6CA-496B-A56F-BF375AC6B567}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Modules.EventManager.Store.EngagementPlan", "Sitecore.Modules.Store.EngagementPlan\Sitecore.Modules.EventManager.Store.EngagementPlan.csproj", "{333248C0-C6CA-496B-A56F-BF375AC6B567}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

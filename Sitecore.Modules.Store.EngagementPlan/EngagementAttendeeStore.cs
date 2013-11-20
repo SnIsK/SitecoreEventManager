@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Sitecore.Analytics.Automation.Data;
-using Sitecore.Data;
-using Sitecore.Diagnostics;
-using Sitecore.Events;
-using Sitecore.Modules.EventManager;
 using Sitecore.Modules.EventManager.Entities;
-using Sitecore.Modules.EventManager.Events.Args;
 using Sitecore.Modules.EventManager.Interfaces;
 using Sitecore.Security.Accounts;
 
-namespace Sitecore.Modules.Store.EngagementPlan
+namespace Sitecore.Modules.EventManager.Store.EngagementPlan
 {
     public class EngagementAttendeeStore : IAttendeesStore
     {
