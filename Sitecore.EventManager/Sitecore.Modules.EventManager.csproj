@@ -62,6 +62,7 @@
     <Compile Include="Events\ItemEventHandler.cs" />
     <Compile Include="Events\RegisterUser.cs" />
     <Compile Include="Events\UnregisterUser.cs" />
+    <Compile Include="Interfaces\IAttendeesStore.cs" />
     <Compile Include="ItemGuids.cs" />
     <Compile Include="ItemUtil.cs" />
     <Compile Include="Pipelines\Args\FindEventRootsArgs.cs" />

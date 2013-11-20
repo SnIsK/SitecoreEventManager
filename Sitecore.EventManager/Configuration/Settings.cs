@@ -1,10 +1,12 @@
 ﻿using Sitecore.Data;
 using Sitecore.Diagnostics;
+using Sitecore.Modules.EventManager.Interfaces;
 
 namespace Sitecore.Modules.EventManager.Configuration
 {
     public static class Settings
     {
+        private static IAttendeesStore _attendessStore;
 
         public static TemplateID EventBranchId
         {
@@ -32,7 +34,19 @@ namespace Sitecore.Modules.EventManager.Configuration
             {
                 string rootTemplateId = Sitecore.Configuration.Settings.GetSetting("EventManager.RootTemplateId");
                 Assert.IsNotNullOrEmpty(rootTemplateId, "Missing EventManager.RootTemplateId setting");
-                return new TemplateID(ID.Parse(rootTemplateId));   
+                return new TemplateID(ID.Parse(rootTemplateId));
+            }
+        }
+        public static IAttendeesStore AttendeesStore
+        {
+            get
+            {
+                if (_attendessStore == null)
+                {
+                    _attendessStore = (IAttendeesStore)Sitecore.Configuration.Settings.GetProviderObject("AttendeesStore", typeof(IAttendeesStore));
+                }
+
+                return _attendessStore;
             }
         }
     }
