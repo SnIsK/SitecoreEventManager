@@ -13,6 +13,14 @@ namespace Sitecore.Modules.EventManager.Events
 {
     public class RegisterUser
     {
+        public void AddUserToAttendeesStore(object sender, EventArgs args)
+        {
+            var eventArgs = Event.ExtractParameter(args, 1) as RegisterUserEventArgs;
+            if (Configuration.Settings.AttendeesStore.AddUser(eventArgs.EventItem, eventArgs.User))
+            {
+                eventArgs.Error = true;
+            }
+        }
         public void AttachUserToAnalyticsState(object sender, EventArgs args)
         {
             var eventArgs = Event.ExtractParameter(args, 1) as RegisterUserEventArgs;

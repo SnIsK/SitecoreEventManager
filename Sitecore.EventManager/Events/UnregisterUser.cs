@@ -8,6 +8,18 @@ namespace Sitecore.Modules.EventManager.Events
 {
     public class UnregisterUser
     {
+
+        public void RemoveUserToAttendeesStore(object sender, EventArgs args)
+        {
+            var eventArgs = Event.ExtractParameter(args, 1) as UnregisterUserEventArgs;
+
+            if (!Configuration.Settings.AttendeesStore.RemoveUser(eventArgs.EventItem, eventArgs.User))
+            {
+                eventArgs.Error = true;
+            }
+
+        }
+
         public void RemoveUserFromEngagementPlan(object sender, EventArgs args)
         {
             var eventArgs = Event.ExtractParameter(args, 1) as UnregisterUserEventArgs;
