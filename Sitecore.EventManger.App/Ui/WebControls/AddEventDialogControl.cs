@@ -2,6 +2,7 @@
 using System.Web.UI.WebControls;
 using Sitecore.Data.Items;
 using Sitecore.Modules.EventManager.Entities;
+using Sitecore.Shell.Applications.ContentEditor;
 using Sitecore.Speak.Web.UI.WebControls;
 using Sitecore.Text;
 
@@ -33,12 +34,8 @@ namespace Sitecore.Modules.EventManager.App.Ui.WebControls
         {
             EventRoot eventRoot = EventRoot.Current;
             Item eventItem = eventRoot.CreateEvent(this._textBox.Text);
-
-            //TODO: Make TaskPageUtil, to handle this
-            UrlString url = new UrlString("/SPEAK/Event Manager/Task pages/EventOverviewTaskPage.aspx");
-            url.Parameters.Add("id", eventItem.ID.Guid.ToString());
-            url.Parameters.Add("sc_speakcontentlang", Sitecore.Context.ContentLanguage.Name);
-            this.Page.Response.Redirect(url.ToString(), false);
+            string linkForTaskPage = TaskPageUtils.GetLinkForTaskPage(eventItem);
+            this.Page.Response.Redirect(linkForTaskPage, false);
         }
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Modules.EventManager.Entities;
 
 namespace Sitecore.Modules.EventManager
 {
@@ -13,7 +14,7 @@ namespace Sitecore.Modules.EventManager
 
         public static Item GetContentItem(ID id)
         {
-            return ContentDatabase.GetItem(id, Sitecore.Context.ContentLanguage);
+            return ContentDatabase.GetItem(id, EventRoot.Current.DefaultLanguage);
         }
 
         public static Item GetContentItem(Guid guid)

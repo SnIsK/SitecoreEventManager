@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
+using Sitecore.Data.Managers;
 using Sitecore.Exceptions;
+using Sitecore.Globalization;
 using Sitecore.Modules.EventManager.Configuration;
 using Sitecore.Modules.EventManager.Pipelines.Args;
 using System.Linq;
@@ -32,7 +34,10 @@ namespace Sitecore.Modules.EventManager.Entities
                     {
                         throw new Exception("Could not find any event roots");
                     }
-                    eventRoot = new EventRoot(args.EventRootItems.First());
+                    var tempEventRoot = new EventRoot(args.EventRootItems.First());
+
+                    eventRoot = new EventRoot(Sitecore.Context.Database.GetItem(tempEventRoot.InnerItem.ID, tempEventRoot.DefaultLanguage));
+
 
                     System.Web.HttpContext.Current.Items["EventRoot"] = eventRoot;
                 }
@@ -74,6 +79,22 @@ namespace Sitecore.Modules.EventManager.Entities
         public TextField EmailFrom
         {
             get { return this.InnerItem.Fields["FromEmail"]; }
+        }
+
+        public Language DefaultLanguage
+        {
+            get
+            {
+                LookupField field = this.InnerItem.Fields["DefaultLanguage"];
+                Item targetItem = field.TargetItem;
+                string languageName = "en";
+                if (targetItem != null)
+                {
+                    languageName = targetItem.Name;
+                }
+
+                return LanguageManager.GetLanguage(languageName);
+            }
         }
 
         /// <summary>

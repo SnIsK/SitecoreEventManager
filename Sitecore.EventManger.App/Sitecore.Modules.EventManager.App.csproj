@@ -65,13 +65,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EventRepository.cs" />
     <Compile Include="Repositories\RegisteredRepository.cs" />
+    <Compile Include="TaskPageUtils.cs" />
     <Compile Include="UiItemIds.cs" />
     <Compile Include="Ui\WebControls\AddEventDialogControl.cs" />
+    <Compile Include="Ui\WebControls\EventLinkColumn.cs" />
     <Compile Include="Ui\WebControls\EventListControl.cs" />
     <Compile Include="Ui\WebControls\IFrame.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.Modules.EventManager.config" />
+    <Content Include="App_Config\Include\Sitecore.Modules.EventManager.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sitecore.EventManager\Sitecore.Modules.EventManager.csproj">

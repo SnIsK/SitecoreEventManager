@@ -8,9 +8,8 @@ namespace Sitecore.Modules.EventManager.Pipelines
     {
         public void Process(FindEventRootsArgs args)
         {
-            //TODO: Make this work!
             Database database = Sitecore.Context.ContentDatabase ?? Sitecore.Context.Database;
-            Item item = database.GetItem(Sitecore.Configuration.Settings.GetSetting("EventManager.EventRootId"), Sitecore.Context.ContentLanguage);
+            Item item = database.GetItem(Sitecore.Configuration.Settings.GetSetting("EventManager.EventRootId"));
 
             args.EventRootItems.Add(item);
         }
