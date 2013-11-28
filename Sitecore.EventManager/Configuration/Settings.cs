@@ -45,8 +45,6 @@ namespace Sitecore.Modules.EventManager.Configuration
                 if (_attendessStore == null)
                 {
                     _attendessStore = (IAttendeesStore)Sitecore.Configuration.Settings.GetProviderObject("AttendeesStore", typeof(IAttendeesStore));
-
-                    object objectFromConfig = ReflectionUtil.CreateObjectFromConfig("AttendeesStore");
                 }
 
                 return _attendessStore;
