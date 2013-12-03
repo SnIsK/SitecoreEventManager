@@ -22,7 +22,7 @@ namespace Sitecore.Modules.EventManager.Events
                 return;
             }
 
-            if (Configuration.Settings.AttendeesStore.AddUser(eventArgs.EventItem, eventArgs.User))
+            if (!Configuration.Settings.AttendeesStore.AddUser(eventArgs.EventItem, eventArgs.User))
             {
                 eventArgs.Error = true;
             }
