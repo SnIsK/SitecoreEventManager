@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using Sitecore.Collections;
 using Sitecore.Data.Items;
@@ -39,13 +40,15 @@ namespace Sitecore.Modules.EventManager.App.sitecore_modules.Shell.EventManager.
                 row.FieldName = child.Fields["HeaderFieldCustomFieldName"].Value;
                 headers.Add(row);
             }
+            StringBuilder responseString = new StringBuilder();
 
+            context.Response.Clear();
             context.Response.ContentType = "text/csv";
             context.Response.AddHeader("content-disposition",
                 string.Format("attachment;filename={0} {1}.csv", eventItem.Title.Value,
                     DateTime.Now.ToString("yyyyMMdd")));
-            context.Response.Write("Name;Email;");
-            context.Response.Write(string.Join(";", headers.Select(t => t.Title)) + Environment.NewLine);
+            responseString.Append("Name;Email;");
+            responseString.Append(string.Join(";", headers.Select(t => t.Title)) + Environment.NewLine);
 
 
             List<string> registered = eventItem.GetRegistered();
@@ -55,12 +58,8 @@ namespace Sitecore.Modules.EventManager.App.sitecore_modules.Shell.EventManager.
             foreach (var username in registered)
             {
                 User fromName = User.FromName(username, false);
-
-                context.Response.Write(string.Format("{0};{1}", fromName.Profile.FullName, fromName.Profile.Email));
-
-                List<string> customPropertyNames = fromName.Profile.GetCustomPropertyNames();
-
                 var row = new List<string>();
+                row.Add(string.Format("{0};{1}", fromName.Profile.FullName, fromName.Profile.Email));
 
                 foreach (var header in headers)
                 {
@@ -69,16 +68,14 @@ namespace Sitecore.Modules.EventManager.App.sitecore_modules.Shell.EventManager.
                 results.Add(row);
             }
 
-
-            foreach (var result in results)
+            foreach (var result in results.OrderBy(t => t[0]))
             {
-                foreach (var value in result)
-                {
-                    context.Response.Write(string.Format(";{0}", value));
-                }
+                responseString.Append(string.Join(";", result));
 
-                context.Response.Write(Environment.NewLine);
+                responseString.Append(Environment.NewLine);
             }
+
+            context.Response.Write(responseString.ToString());
         }
 
         public bool IsReusable
