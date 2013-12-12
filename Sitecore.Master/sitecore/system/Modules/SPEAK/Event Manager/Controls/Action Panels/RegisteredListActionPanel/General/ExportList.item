@@ -13,13 +13,13 @@ templatekey: Action
 field: {DA590941-D575-45D7-B344-15DB4D94E9F6}
 name: Click
 key: click
-content-length: 27
+content-length: 94
 
-eventmanager:exportuserlist
+Sitecore.Modules.EventManager.App.Commands.ExportSignupList, Sitecore.Modules.EventManager.App
 ----version----
 language: en
 version: 1
-revision: d9ed9839-f814-4051-82cb-42bae3fe1c7b
+revision: 2d6cf620-8722-4e3d-8d07-1b56d5fe1dfe
 
 ----field----
 field: {E52066BC-420A-4570-88FB-07815A9AECC4}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d9ed9839-f814-4051-82cb-42bae3fe1c7b
+2d6cf620-8722-4e3d-8d07-1b56d5fe1dfe
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20130904T134446:635138990861200658
+20131212T215134:635224818946982614
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

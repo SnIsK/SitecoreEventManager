@@ -36,7 +36,7 @@ namespace Sitecore.Modules.EventManager.Entities
                     }
                     var tempEventRoot = new EventRoot(args.EventRootItems.First());
 
-                    eventRoot = new EventRoot(Sitecore.Context.Database.GetItem(tempEventRoot.InnerItem.ID, tempEventRoot.DefaultLanguage));
+                    eventRoot = new EventRoot(ItemUtil.ContentDatabase.GetItem(tempEventRoot.InnerItem.ID, tempEventRoot.DefaultLanguage));
 
 
                     System.Web.HttpContext.Current.Items["EventRoot"] = eventRoot;
