@@ -116,7 +116,7 @@ namespace Sitecore.Modules.EventManager.Entities
 
         public List<Item> GetEvents()
         {
-            return this.InnerItem.Children.Select(t => t).ToList();
+            return this.InnerItem.Children.Where(t => t.TemplateID == Settings.EventTemplateId || t.Template.BaseTemplates.Any(a => a.ID.Guid == Configuration.Settings.EventTemplateId.ID.Guid)).ToList();
         }
 
         public List<Item> GetEvents(DateTime afterDate)
