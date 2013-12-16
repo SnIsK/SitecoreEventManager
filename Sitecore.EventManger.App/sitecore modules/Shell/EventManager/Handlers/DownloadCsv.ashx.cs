@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -40,42 +41,42 @@ namespace Sitecore.Modules.EventManager.App.sitecore_modules.Shell.EventManager.
                 row.FieldName = child.Fields["HeaderFieldCustomFieldName"].Value;
                 headers.Add(row);
             }
-            StringBuilder responseString = new StringBuilder();
 
-            context.Response.Clear();
-            context.Response.ContentType = "text/csv";
-            context.Response.AddHeader("content-disposition",
-                string.Format("attachment;filename={0} {1}.csv", eventItem.Title.Value,
-                    DateTime.Now.ToString("yyyyMMdd")));
-            responseString.Append("Name;Email;");
-            responseString.Append(string.Join(";", headers.Select(t => t.Title)) + Environment.NewLine);
-
-
-            List<string> registered = eventItem.GetRegistered();
-            List<List<string>> results = new List<List<string>>();
-
-
-            foreach (var username in registered)
+            using (TextWriter textWriter = new StreamWriter(context.Response.OutputStream, Encoding.GetEncoding(1252)))
             {
-                User fromName = User.FromName(username, false);
-                var row = new List<string>();
-                row.Add(string.Format("{0};{1}", fromName.Profile.FullName, fromName.Profile.Email));
+                context.Response.Clear();
+                context.Response.ContentType = "text/csv";
+                context.Response.AddHeader("content-disposition",
+                    string.Format("attachment;filename={0} {1}.csv", eventItem.Title.Value,
+                        DateTime.Now.ToString("yyyyMMdd")));
+                textWriter.Write("Name;Email;");
+                textWriter.Write(string.Join(";", headers.Select(t => t.Title)) + Environment.NewLine);
 
-                foreach (var header in headers)
+
+                List<string> registered = eventItem.GetRegistered();
+                List<List<string>> results = new List<List<string>>();
+
+
+                foreach (var username in registered)
                 {
-                    row.Add("\"" + fromName.Profile.GetCustomProperty(header.FieldName).Replace("\"", "\"\"") + "\"");
+                    User fromName = User.FromName(username, false);
+                    var row = new List<string>();
+                    row.Add(string.Format("{0};{1}", fromName.Profile.FullName, fromName.Profile.Email));
+
+                    foreach (var header in headers)
+                    {
+                        row.Add("\"" + fromName.Profile.GetCustomProperty(header.FieldName).Replace("\"", "\"\"") + "\"");
+                    }
+                    results.Add(row);
                 }
-                results.Add(row);
+
+                foreach (var result in results.OrderBy(t => t[0]))
+                {
+                    textWriter.Write(string.Join(";", result));
+
+                    textWriter.Write(Environment.NewLine);
+                }
             }
-
-            foreach (var result in results.OrderBy(t => t[0]))
-            {
-                responseString.Append(string.Join(";", result));
-
-                responseString.Append(Environment.NewLine);
-            }
-
-            context.Response.Write(responseString.ToString());
         }
 
         public bool IsReusable
