@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Configuration;
 using Sitecore.Collections;
 using Sitecore.Data.Items;
 using Sitecore.Modules.EventManager.Entities;
@@ -47,7 +49,7 @@ namespace Sitecore.Modules.EventManager.App.sitecore_modules.Shell.EventManager.
                 context.Response.Clear();
                 context.Response.ContentType = "text/csv";
                 context.Response.AddHeader("content-disposition",
-                    string.Format("attachment;filename={0} {1}.csv", eventItem.Title.Value,
+                    string.Format("attachment;filename={0} {1}.csv", MakeValidFileName(eventItem.Title.Value),
                         DateTime.Now.ToString("yyyyMMdd")));
                 textWriter.Write("Name;Email;");
                 textWriter.Write(string.Join(";", headers.Select(t => t.Title)) + Environment.NewLine);
@@ -77,6 +79,15 @@ namespace Sitecore.Modules.EventManager.App.sitecore_modules.Shell.EventManager.
                     textWriter.Write(Environment.NewLine);
                 }
             }
+
+        }
+
+        public static string MakeValidFileName(string name)
+        {
+            string invalidChars = Regex.Escape(new string(System.IO.Path.GetInvalidFileNameChars()));
+            string invalidReStr = string.Format(@"[{0}]+", invalidChars);
+            string replace = Regex.Replace(name, invalidReStr, "_").Replace(";", "").Replace(",", "");
+            return replace;
         }
 
         public bool IsReusable

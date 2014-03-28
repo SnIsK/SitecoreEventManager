@@ -128,7 +128,7 @@ namespace Sitecore.Modules.EventManager.Entities
 
         public EventItem GetEvent(Guid id)
         {
-            return new EventItem(this.InnerItem.Axes.GetChild(ID.Parse(id)));
+            return new EventItem(this.InnerItem.Database.GetItem(ID.Parse(id)));
         }
     }
 }
