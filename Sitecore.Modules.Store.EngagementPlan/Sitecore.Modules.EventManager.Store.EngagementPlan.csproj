@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Sitecore.Automation.MarketingAutomation">
-      <HintPath>..\Sitecore.EventManger.App\bin\Debug\Sitecore.Automation.MarketingAutomation.dll</HintPath>
+      <HintPath>..\..\..\..\BitBucket\Horten\Source\Lib\Sitecore\bin\Sitecore.Automation.MarketingAutomation.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\Sitecore.EventManger.App\bin\Debug\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\BitBucket\Horten\Source\Lib\Sitecore\bin\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

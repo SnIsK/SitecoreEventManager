@@ -184,7 +184,7 @@ namespace Sitecore.Modules.EventManager.Entities
                     string mailContent = TransformMail(user);
                     mailMessage.IsBodyHtml = true;
                     mailMessage.Body = mailContent;
-                    mailMessage.Subject = this.EmailSubject.Value.Replace("[Title]", this.Title.Value);
+					mailMessage.Subject = TransformSubject();
                     client.Send(mailMessage);
                 }
             }
@@ -196,7 +196,30 @@ namespace Sitecore.Modules.EventManager.Entities
             return true;
         }
 
-        private string TransformMail(User user)
+	    private string TransformSubject()
+	    {
+			var subject = this.EmailSubject.Value;
+
+		    if (subject.Contains("[Title]"))
+		    {
+				subject = subject.Replace("[Title]", this.Title.Value);
+		    }
+
+		    if (subject.Contains("[EventStart]"))
+			{
+				if (this.From.DateTime.Date != this.To.DateTime.Date)
+				{
+					subject = subject.Replace("[EventStart]", this.From.DateTime.ToString("d. MMMM yyyy"));
+				}
+				else
+				{
+					subject = subject.Replace("[EventStart]", this.From.DateTime.ToString("d. MMMM yyyy kl. H.mm"));
+				}
+			}
+		    return subject;
+	    }
+
+	    private string TransformMail(User user)
         {
             var content = this.EmailMessage.Value.Replace(Environment.NewLine, "<br />");
             if (content.Contains("[Title]"))

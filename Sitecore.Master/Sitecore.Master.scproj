@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -23,20 +23,28 @@
     <Name>Sitecore.Master</Name>
     <RootNamespace>Sitecore.Master</RootNamespace>
     <SitecoreDatabase>master</SitecoreDatabase>
+    <EnableCodeGeneration>false</EnableCodeGeneration>
+    <ManageRoles>False</ManageRoles>
+    <AssemblyStatus>Exclude</AssemblyStatus>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>.\Debug\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
-    <SitecoreDeployFolder>D:\Solutions\InstallerProjects\eventmanager\Website</SitecoreDeployFolder>
-    <SitecoreWebUrl>http://eventmanager.dev/</SitecoreWebUrl>
+    <SitecoreDeployFolder>C:\Sites\Sitecore\Horten\EventManager</SitecoreDeployFolder>
+    <SitecoreWebUrl>http://eventmanager-local.dis-play.dk</SitecoreWebUrl>
     <SitecoreAccessGuid>bab406a4-dea4-4e5b-a470-b491667bfde1</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
+    <DisableFileDeployment>False</DisableFileDeployment>
+    <EnableValidations>False</EnableValidations>
+    <ValidationSettingsFilePath>.\Sitecore.Master_ALL.xml</ValidationSettingsFilePath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
     <OutputPath>.\Release\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <EnableValidations>False</EnableValidations>
+    <ValidationSettingsFilePath>.\Sitecore.Master_ALL.xml</ValidationSettingsFilePath>
   </PropertyGroup>
   <ItemGroup>
     <AssemblyAttributes Include="AssemblyFileVersion">
@@ -47,574 +55,800 @@
     </AssemblyAttributes>
   </ItemGroup>
   <ItemGroup>
-    <ExcludedAssemblies Include="Sitecore.%2a.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <SitecoreItem Include="sitecore\layout.item">
       <Icon>/temp/IconCache/Applications/16x16/windows.png</Icon>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings.item">
       <Icon>/temp/IconCache/Software/16x16/elements1.png</Icon>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\Event Manger.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\Event Manger\Speak.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\Event Manger\Speak\Webcontrols.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\Event Manger\Speak\Webcontrols\AddEventDialog.item">
       <Icon>/temp/IconCache/Control/32x32/multi_controls_h.png </Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\Event Manger\Speak\Webcontrols\EventLinkColumn.item">
       <Icon>/temp/IconCache/Control/32x32/multi_controls_h.png </Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\Event Manger\Speak\Webcontrols\EventList.item">
       <Icon>/temp/IconCache/Control/32x32/multi_controls_h.png </Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings\Event Manger\Speak\Webcontrols\Iframe.item">
       <Icon>/temp/IconCache/Control/32x32/multi_controls_h.png </Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system.item">
       <Icon>/temp/IconCache/People/16x16/workstation1.png</Icon>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Marketing Center.item">
       <Icon>/temp/IconCache/People/32x32/megaphone.png</Icon>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Marketing Center\Engagement Plans.item">
       <Icon>/temp/IconCache/Software/16x16/graph_edge_directed.png</Icon>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Marketing Center\Engagement Plans\Events.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>KeepDirectDescendantsSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Marketing Center\Engagement Plans\Events\Events.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Marketing Center\Engagement Plans\Events\Standart.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Marketing Center\Engagement Plans\Events\Standart\Standart Event Plan.item">
       <Icon>/temp/IconCache/Software/16x16/graph_edge_directed.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Marketing Center\Engagement Plans\Events\Standart\Standart Event Plan\Deregistered.item">
       <Icon>/temp/IconCache/Software/32x32/shape_square.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Marketing Center\Engagement Plans\Events\Standart\Standart Event Plan\Registered.item">
       <Icon>/temp/IconCache/Software/32x32/shape_square.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules.item">
       <Icon>/temp/IconCache/Software/16x16/jar.png</Icon>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK.item">
       <Icon>/temp/IconCache/Software/32x32/breakpoints.png</Icon>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager.item">
       <Icon>/temp/IconCache/Software/32x32/coffeebean.png</Icon>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls.item">
       <Icon>/temp/IconCache/Applications/32x32/folder_cubes.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels.item">
       <Icon>/temp/IconCache/Applications/32x32/folder_new.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\EventActionPanel.item">
       <Icon>/temp/IconCache/Control/32x32/menu_b_h.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\EventActionPanel\General.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\EventActionPanel\General\EditPage.item">
       <Icon>/temp/IconCache/Control/32x32/socket_b_d.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\Recent Created Events.item">
       <Icon>/temp/IconCache/Control/32x32/menu_b_h.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\Recent Created Events\General.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\Recent Created Events\General\ExportList.item">
       <Icon>/temp/IconCache/Control/32x32/socket_b_d.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\RegisteredListActionPanel.item">
       <Icon>/temp/IconCache/Control/32x32/menu_b_h.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\RegisteredListActionPanel\General.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\RegisteredListActionPanel\General\ExportList.item">
       <Icon>/temp/IconCache/Control/32x32/socket_b_d.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Action Panels\RegisteredListActionPanel\General\SendConfirmationMessage.item">
       <Icon>/temp/IconCache/Control/32x32/socket_b_d.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Dialogs.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\Dialogs\Edit Event Page.item">
       <Icon>/temp/IconCache/Applications/32x32/windows.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views.item">
       <Icon>/temp/IconCache/Applications/32x32/folder_document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\Most Recent Created Events.item">
       <Icon>/temp/IconCache/Applications/16x16/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\Most Recent Created Events\From.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\Most Recent Created Events\ID.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\Most Recent Created Events\Name.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\Most Recent Created Events\Page Views.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\Most Recent Created Events\Registered.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\Most Recent Created Events\To.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\Most Recent Created Events\Unregistered.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\RegisteredList.item">
       <Icon>/temp/IconCache/Applications/16x16/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\RegisteredList\Email.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\RegisteredList\ID.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Controls\List Views\RegisteredList\Name.item">
       <Icon>/temp/IconCache/Business/32x32/column.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Create.item">
       <Icon>/temp/IconCache/Applications/32x32/signpost.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Create\Create Event.item">
       <Icon>/temp/IconCache/Applications/32x32/windows.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Csv Settings.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Csv Settings\AttendeeExport.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Csv Settings\AttendeeExport\Address.item">
       <Icon>/temp/IconCache/Applications/32x32/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Csv Settings\AttendeeExport\AreaCode.item">
       <Icon>/temp/IconCache/Applications/32x32/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Csv Settings\AttendeeExport\City.item">
       <Icon>/temp/IconCache/Applications/32x32/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Csv Settings\AttendeeExport\Country.item">
       <Icon>/temp/IconCache/Applications/32x32/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Csv Settings\AttendeeExport\Firm.item">
       <Icon>/temp/IconCache/Applications/32x32/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Csv Settings\AttendeeExport\Title.item">
       <Icon>/temp/IconCache/Applications/32x32/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages.item">
       <Icon>/temp/IconCache/Applications/32x32/folder_document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage.item">
       <Icon>/temp/IconCache/People/32x32/wind_engines.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Email.item">
       <Icon>/temp/IconCache/Applications/16x16/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Email\Email Message.item">
       <Icon>/temp/IconCache/Applications/32x32/form_green.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Email\Email Message\Email.item">
       <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Email\Email Message\From Email.item">
       <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Email\Email Message\Name.item">
       <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\General.item">
       <Icon>/temp/IconCache/Applications/16x16/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\General\General Event Info.item">
       <Icon>/temp/IconCache/Applications/32x32/form_green.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\General\General Event Info\Description.item">
       <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\General\General Event Info\From.item">
       <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\General\General Event Info\Location.item">
       <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\General\General Event Info\NumberOfSeats.item">
       <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\General\General Event Info\Title.item">
       <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\General\General Event Info\To.item">
       <Icon>/temp/IconCache/Applications/32x32/bullet_ball_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Modules\SPEAK\Event Manager\Task pages\EventOverviewTaskPage\Signedup.item">
       <Icon>/temp/IconCache/Applications/16x16/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates.item">
       <Icon>/temp/IconCache/Applications/16x16/form_blue.png</Icon>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\CsvExport.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\CsvExport\CsvExportSetting.item">
       <Icon>/temp/IconCache/Applications/16x16/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\CsvExport\CsvExportSetting\__Standard Values.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\CsvExport\ProfileCustomField.item">
       <Icon>/temp/IconCache/Applications/32x32/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\CsvExport\ProfileCustomField\Data.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\CsvExport\ProfileCustomField\Data\HeaderFieldCustomFieldName.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\CsvExport\ProfileCustomField\Data\HeaderFieldTitle.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root.item">
       <Icon>/temp/IconCache/Applications/32x32/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root\__Standard Values.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root\Analytics.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root\Analytics\Standard Message Plan.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root\Email Data.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root\Email Data\EmailMessage.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root\Email Data\EmailName.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root\Email Data\EmailSubject.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root\Email Data\FromEmail.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root\Settings.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event Root\Settings\DefaultLanguage.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event.item">
       <Icon>/temp/IconCache/Applications/16x16/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\__Standard Values.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Analytics.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Analytics\Standard Message Plan.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Email Data.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Email Data\EmailMessage.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Email Data\EmailName.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Email Data\EmailSubject.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Email Data\FromEmail.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Event Data.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Event Data\Description.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Event Data\From.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Event Data\Location.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Event Data\Title.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Event\Event Data\To.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Speak.item">
       <Icon>/temp/IconCache/Applications/16x16/folder.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Speak\ObjectDetailListWithSort.item">
       <Icon>/temp/IconCache/Applications/16x16/form_blue.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Speak\ObjectDetailListWithSort\ObjectDataSource Settings.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates\Event Manager\Speak\ObjectDetailListWithSort\ObjectDataSource Settings\SortParameterName.item">
       <Icon>/temp/IconCache/Applications/32x32/Document.png</Icon>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
     </SitecoreItem>
+  </ItemGroup>
+  <ItemGroup>
+    <ExcludedAssemblies Include="Sitecore.%2a.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
 </Project>

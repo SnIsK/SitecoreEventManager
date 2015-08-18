@@ -31,13 +31,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Sitecore.Automation.MarketingAutomation">
-      <HintPath>..\Lib\Sitecore.Automation.MarketingAutomation.dll</HintPath>
+      <HintPath>..\..\..\..\BitBucket\Horten\Source\Lib\Sitecore\bin\Sitecore.Automation.MarketingAutomation.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Client.Extensions">
-      <HintPath>..\Lib\Sitecore.Client.Extensions.dll</HintPath>
+      <HintPath>..\..\..\..\BitBucket\Horten\Source\Lib\Speak\bin\Sitecore.Client.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\Lib\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\BitBucket\Horten\Source\Lib\Sitecore\bin\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
